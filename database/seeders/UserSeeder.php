@@ -23,7 +23,7 @@ class UserSeeder extends Seeder
                 'username' => 'ahmaddani',
                 'password' => Hash::make('1234'),
                 'level' => 'admin',
-                'tanggaljoin' => '2022-06-04',
+                'tanggal_join' => '2022-06-04',
             ],
             [
                 'foto' => '',
@@ -32,7 +32,7 @@ class UserSeeder extends Seeder
                 'username' => 'rizkimubarok',
                 'password' => Hash::make('1234'),
                 'level' => 'admin',
-                'tanggaljoin' => '2022-06-04',
+                'tanggal_join' => '2022-06-04',
             ],
             [
                 'foto' => '',
@@ -41,7 +41,7 @@ class UserSeeder extends Seeder
                 'username' => 'alaika',
                 'password' => Hash::make('1234'),
                 'level' => 'petugas',
-                'tanggaljoin' => '2022-06-04',
+                'tanggal_join' => '2022-06-04',
             ]
             ]);
     }

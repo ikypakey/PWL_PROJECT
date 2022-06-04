@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('username')->nullable();
             $table->string('password');
             $table->string('level');
-            $table->date('tanggaljoin');
+            $table->date('tanggal_join');
             $table->rememberToken();
             $table->timestamps();
         });

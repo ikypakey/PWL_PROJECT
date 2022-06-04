@@ -19,9 +19,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('index');
-});
+})->middleware('auth');
 Route::resource('/dataanggota', DataAnggotaController::class);
 Route::resource('/datapetugas', UserController::class);
 Route::resource('/databuku', DataBukuController::class);
 Route::resource('/datakategori', DataKategoriController::class);
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -221,18 +221,14 @@
                     <i class="mdi mdi-lifebuoy me-1"></i>
                     <span>Support</span>
                 </a>
+                <a class="dropdown-item notify-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i
+                                class="mdi mdi-logout me-1"></i>
+                            {{ __('Logout') }}
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        </a>
 
-                <!-- item-->
-                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                    <i class="mdi mdi-lock-outline me-1"></i>
-                    <span>Lock Screen</span>
-                </a>
-
-                <!-- item-->
-                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                    <i class="mdi mdi-logout me-1"></i>
-                    <span>Logout</span>
-                </a>
             </div>
         </li>
 

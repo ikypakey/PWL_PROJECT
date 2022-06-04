@@ -3,10 +3,7 @@
     <!-- LOGO -->
     <a href="index.html" class="logo text-center logo-light">
         <span class="logo-lg">
-            <img src="assets/images/logo.png" alt="" height="16">
-        </span>
-        <span class="logo-sm">
-            <img src="assets/images/logo_sm.png" alt="" height="16">
+            <img src="assets/images/logosipus.png" alt="" height="105" >
         </span>
     </a>
 
@@ -60,10 +57,10 @@
                 <div class="collapse" id="sidebarEcommerce">
                     <ul class="side-nav-second-level">
                         <li>
-                            <a href="apps-ecommerce-products.html">Data Anggota</a>
+                            <a href="/dataanggota">Data Anggota</a>
                         </li>
                         <li>
-                            <a href="apps-ecommerce-products-details.html">Data Petugas</a>
+                            <a href="/datapetugas">Data Petugas</a>
                         </li>
                     </ul>
                 </div>
@@ -78,10 +75,10 @@
                 <div class="collapse" id="sidebarProjects">
                     <ul class="side-nav-second-level">
                         <li>
-                            <a href="apps-projects-list.html">Kategori Buku</a>
+                            <a href="/datakategori">Kategori Buku</a>
                         </li>
                         <li>
-                            <a href="apps-projects-details.html">Kumpulan Buku</a>
+                            <a href="/databuku">Kumpulan Buku</a>
                         </li>
                     </ul>
                 </div>
