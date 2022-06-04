@@ -25,8 +25,6 @@
         <!--- Sidemenu -->
         <ul class="side-nav">
 
-            <li class="side-nav-title side-nav-item">Navigation</li>
-
             <li class="side-nav-item">
                 <a data-bs-toggle="collapse" href="#sidebarDashboards" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link">
                     <i class="uil-home-alt"></i>
@@ -51,7 +49,7 @@
                 </div>
             </li>
 
-            <li class="side-nav-title side-nav-item">Apps</li>
+            <li class="side-nav-title side-nav-item">Data</li>
 
             <li class="side-nav-item">
                 <a data-bs-toggle="collapse" href="#sidebarEcommerce" aria-expanded="false" aria-controls="sidebarEcommerce" class="side-nav-link">
@@ -62,28 +60,10 @@
                 <div class="collapse" id="sidebarEcommerce">
                     <ul class="side-nav-second-level">
                         <li>
-                            <a href="apps-ecommerce-products.html">Data Member</a>
+                            <a href="apps-ecommerce-products.html">Data Anggota</a>
                         </li>
                         <li>
-                            <a href="apps-ecommerce-products-details.html">Data Karyawan</a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-
-            <li class="side-nav-item">
-                <a data-bs-toggle="collapse" href="#sidebarEmail" aria-expanded="false" aria-controls="sidebarEmail" class="side-nav-link">
-                    <i class="uil-envelope"></i>
-                    <span> Data Transaksi </span>
-                    <span class="menu-arrow"></span>
-                </a>
-                <div class="collapse" id="sidebarEmail">
-                    <ul class="side-nav-second-level">
-                        <li>
-                            <a href="apps-email-inbox.html">Data Peminjaman</a>
-                        </li>
-                        <li>
-                            <a href="apps-email-read.html">Data Pengembalian</a>
+                            <a href="apps-ecommerce-products-details.html">Data Petugas</a>
                         </li>
                     </ul>
                 </div>
@@ -107,6 +87,24 @@
                 </div>
             </li>
 
+            <li class="side-nav-title side-nav-item">Manajemen Buku</li>
+            <li class="side-nav-item">
+                <a data-bs-toggle="collapse" href="#sidebarEmail" aria-expanded="false" aria-controls="sidebarEmail" class="side-nav-link">
+                    <i class="uil-envelope"></i>
+                    <span> Data Transaksi </span>
+                    <span class="menu-arrow"></span>
+                </a>
+                <div class="collapse" id="sidebarEmail">
+                    <ul class="side-nav-second-level">
+                        <li>
+                            <a href="apps-email-inbox.html">Data Peminjaman</a>
+                        </li>
+                        <li>
+                            <a href="apps-email-read.html">Data Pengembalian</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
 
             <li class="side-nav-item">
                 <a href="apps-file-manager.html" class="side-nav-link">
