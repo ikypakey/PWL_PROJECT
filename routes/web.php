@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\DataAnggotaController;
+use App\Http\Controllers\DataBukuController;
+use App\Http\Controllers\DataKategoriController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,4 +22,6 @@ Route::get('/', function () {
 });
 Route::resource('/dataanggota', DataAnggotaController::class);
 Route::resource('/datapetugas', UserController::class);
+Route::resource('/databuku', DataBukuController::class);
+Route::resource('/datakategori', DataKategoriController::class);
 

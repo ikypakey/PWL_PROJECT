@@ -109,7 +109,7 @@
             <li class="side-nav-item">
                 <a href="apps-file-manager.html" class="side-nav-link">
                     <i class="uil-folder-plus"></i>
-                    <span> File Manager </span>
+                    <span> Laporan </span>
                 </a>
             </li>
 

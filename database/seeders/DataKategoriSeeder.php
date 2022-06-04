@@ -15,7 +15,7 @@ class DataKategoriSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('kategoris')->insert([
+        DB::table('data_kategoris')->insert([
             [
                 'nama_kategori'=>'Komik',
                 'image'=>'',

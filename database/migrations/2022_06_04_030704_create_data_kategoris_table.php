@@ -14,7 +14,7 @@ class CreateDataKategorisTable extends Migration
      */
     public function up()
     {
-        Schema::create('kategoris', function (Blueprint $table) {
+        Schema::create('data_kategoris', function (Blueprint $table) {
             $table->id();
             $table->string('nama_kategori');
             $table->string('image')->nullable();

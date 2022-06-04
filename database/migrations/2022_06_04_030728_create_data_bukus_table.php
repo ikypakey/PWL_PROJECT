@@ -16,13 +16,15 @@ class CreateDataBukusTable extends Migration
         Schema::create('data_bukus', function (Blueprint $table) {
             $table->id();
             $table->string('judul_buku');
-            $table->foreignId('kategoris_id')->constrained();
+            $table->unsignedBigInteger('kategoris_id')->nullable();
+            $table->foreign('kategoris_id')->references('id')->on('data_kategoris');
             $table->string('book_image')->nullable();
             $table->string('nama_pengarang');
             $table->string('penerbit');
             $table->string('tahun_terbit');
             $table->integer('jumlah_halaman');
-            $table->foreignId('user_id')->constrained();
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

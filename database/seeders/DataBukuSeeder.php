@@ -15,38 +15,39 @@ class DataBukuSeeder extends Seeder
     {
          DB::table('data_bukus')->insert([
             [
-                'judul_buku'=>'Naruto',
-                'kategoris_id'=>'',
+                'judul_buku'=>'Naruto Shipuden Vol 30',
+                'kategoris_id'=>'1',
                 'book_image'=>'',
-                'nama_pengarang'=>'',
-                'penerbit'=>'',
-                'tahun_terbit'=>'',
-                'jumlah_halaman'=>'',
-                'user_id'=>'',
+                'nama_pengarang'=>' Mashashi Kishimoto',
+                'penerbit'=>'CV. Anugerah Rajarjo',
+                'tahun_terbit'=>' 2016 ',
+                'jumlah_halaman'=>' 200 ',
+                'user_id'=>' 2 ',
                 
 
             ],
            [
-                'judul_buku'=>'',
-                'kategoris_id'=>'',
+                 'judul_buku'=>'Naruto Shipuden Vol 1',
+                'kategoris_id'=>1,
                 'book_image'=>'',
-                'nama_pengarang'=>'',
-                'penerbit'=>'',
-                'tahun_terbit'=>'',
-                'jumlah_halaman'=>'',
-                'user_id'=>'',
+                'nama_pengarang'=>' Mashashi Kishimoto',
+                'penerbit'=>'CV. Anugerah Rajarjo',
+                'tahun_terbit'=>' 2016 ',
+                'jumlah_halaman'=>' 200 ',
+                'user_id'=>3
                 
 
             ],
             [
-                'judul_buku'=>'',
-                'kategoris_id'=>'',
+                'judul_buku'=>'Naruto Shipuden Vol 45',
+                'kategoris_id'=>1,
                 'book_image'=>'',
-                'nama_pengarang'=>'',
-                'penerbit'=>'',
-                'tahun_terbit'=>'',
-                'jumlah_halaman'=>'',
-                'user_id'=>'',
+                'nama_pengarang'=>' Mashashi Kishimoto',
+                'penerbit'=>'CV. Anugerah Rajarjo',
+                'tahun_terbit'=>' 2016 ',
+                'jumlah_halaman'=>' 200 ',
+                'user_id'=>3
+
                 
 
             ],
