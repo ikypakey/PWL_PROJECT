@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\DataAnggotaController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,6 +18,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index');
 });
-Route::get('/p', function () {
-    return view('product');
-});
+Route::resource('/dataanggota', DataAnggotaController::class);
+Route::resource('/datapetugas', UserController::class);
+
