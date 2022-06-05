@@ -39,7 +39,13 @@
               <td class="text-capitalize">{{$user->nama}}</td>
               <td>{{$user->email}}</td>
               <td>{{$user->username}}</td>
-              <td>{{$user->tanggaljoin}}</td>
+              <td>{{$user->tanggal_join}}</td>
+              <td>
+                <a class="btn btn-primary" href="">Edit</a>
+                      @csrf
+                      @method('DELETE')
+                      <button type="submit" class="btn btn-danger">Delete</button>
+              </td>
               </tr>
               @endforeach
             </tbody>

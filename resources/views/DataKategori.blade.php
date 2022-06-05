@@ -44,6 +44,12 @@
                     <td>{{$kategori->nama_kategori}}</td>
                     <td>{{$kategori->image}}</td>
                     <td>{{$kategori->deskripsi}}</td>
+                    <td>
+                      <a class="btn btn-primary" href="">Edit</a>
+                      @csrf
+                      @method('DELETE')
+                      <button type="submit" class="btn btn-danger">Delete</button>
+                    </td>
                   </tr>
                   @endforeach
                 </tbody>

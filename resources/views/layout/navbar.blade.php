@@ -194,8 +194,8 @@
                     <img src="assets/images/users/avatar-1.jpg" alt="user-image" class="rounded-circle">
                 </span>
                 <span>
-                    <span class="account-user-name">Soeng Souy</span>
-                    <span class="account-position">Founder</span>
+                    <span class="account-user-name">Ahmad Dani</span>
+                    <span class="account-position">Admin</span>
                 </span>
             </a>
             <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu profile-dropdown">

@@ -58,6 +58,12 @@
                     <td>{{$anggota->jeniskelamin}}</td>
                     <td>{{$anggota->notelp}}</td>
                     <td>{{$anggota->tanggallahir}}</td>
+                    <td>
+                      <a class="btn btn-primary" href="">Edit</a>
+                      @csrf
+                      @method('DELETE')
+                      <button type="submit" class="btn btn-danger">Delete</button>
+                    </td>
                   </tr>
                   @endforeach
                 </tbody>

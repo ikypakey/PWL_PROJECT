@@ -24,8 +24,8 @@
 
             <li class="side-nav-item">
                 <a data-bs-toggle="collapse" href="#sidebarDashboards" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link">
-                    <i class="uil-home-alt"></i>
-                    <span class="badge bg-success float-end">4</span>
+                    <br><i class="uil-home-alt"></i>
+                    <span class="badge bg-success float-end"></span>
                     <span> Dashboards </span>
                 </a>
                 <div class="collapse" id="sidebarDashboards">

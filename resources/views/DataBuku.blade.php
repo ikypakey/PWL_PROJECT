@@ -53,7 +53,13 @@
                     <td>{{$buku->penerbit}}</td>
                     <td>{{$buku->tahun_terbit}}</td>
                     <td>{{$buku->jumlah_halaman}}</td>
-                    <td>{{$buku->user_id}}</td>
+                    <td>{{$buku->user->nama}}</td>
+                    <td>
+                      <a class="btn btn-primary" href="">Edit</a>
+                      @csrf
+                      @method('DELETE')
+                      <button type="submit" class="btn btn-danger">Delete</button>
+                    </td>
                   </tr>
                   @endforeach
                 </tbody>
