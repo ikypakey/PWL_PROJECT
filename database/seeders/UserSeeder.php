@@ -21,7 +21,7 @@ class UserSeeder extends Seeder
                 'nama' => 'Ahmad Dani Maulana',
                 'email' => 'ahmaddanimaulana@gmail.com',
                 'password' => Hash::make('1234'),
-                'level' => 'admin',
+                'level' => 'Admin',
                 'tanggal_join' => '2022-06-04',
             ],
             [
@@ -29,7 +29,7 @@ class UserSeeder extends Seeder
                 'nama' => 'Muhammad Rizki Mubarok',
                 'email' => 'muhammadrizkimubarok@gmail.com',
                 'password' => Hash::make('1234'),
-                'level' => 'admin',
+                'level' => 'Admin',
                 'tanggal_join' => '2022-06-04',
             ],
             [
@@ -37,7 +37,7 @@ class UserSeeder extends Seeder
                 'nama' => 'Alaika Rohman',
                 'email' => 'alaikarohman@gmail.com',
                 'password' => Hash::make('1234'),
-                'level' => 'petugas',
+                'level' => 'Petugas',
                 'tanggal_join' => '2022-06-04',
             ]
             ]);

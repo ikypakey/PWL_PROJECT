@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\DataBuku;
+use App\Models\DataKategori;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class DataBukuController extends Controller
 {
@@ -14,7 +17,7 @@ class DataBukuController extends Controller
      */
     public function index()
     {
-         return view('DataBuku',[
+         return view('buku.index',[
             'data_bukus'=> DataBuku::all()
         ]);
     }
@@ -26,7 +29,11 @@ class DataBukuController extends Controller
      */
     public function create()
     {
-        //
+        return view('buku.create',[
+            'users'=> User::all(),
+            'data_kategoris'=> DataKategori::all()
+
+        ]);
     }
 
     /**
@@ -37,7 +44,22 @@ class DataBukuController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $tes=$request->validate([
+            'judul_buku' => 'required',
+            'kategoris_id' => 'required',
+            'book_image' => 'required',
+            'nama_pengarang' => 'required',
+            'penerbit' => 'required',
+            'tahun_terbit' => 'required',
+            'jumlah_halaman' => 'required',
+            'user_id' => 'required',
+            ]);
+            if ($request->file('book_image')) {
+                $tes['book_image'] = $request->file('book_image')->store('data_bukus', 'public');
+            }
+            DataBuku::create($tes);
+            return redirect('/databuku')
+            ->with('success', 'Data Buku Berhasil Ditambahkan');
     }
 
     /**
@@ -48,7 +70,10 @@ class DataBukuController extends Controller
      */
     public function show($id)
     {
-        //
+        $tes=DataBuku::where('id', $id)->first();
+        return view('buku.detail', [
+            'data_bukus' => $tes,
+        ]);
     }
 
     /**
@@ -59,7 +84,13 @@ class DataBukuController extends Controller
      */
     public function edit($id)
     {
-        //
+        $tes=DataBuku::where('id', $id)->first();
+        return view('buku.edit', [
+            'data_bukus' => $tes,
+            'users'=> User::all(),
+            'data_kategoris'=> DataKategori::all()
+
+        ]);
     }
 
     /**
@@ -71,7 +102,27 @@ class DataBukuController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $rules = [
+            'judul_buku' => 'required',
+            'kategoris_id' => 'required',
+            'book_image' => 'required',
+            'nama_pengarang' => 'required',
+            'penerbit' => 'required',
+            'tahun_terbit' => 'required',
+            'jumlah_halaman' => 'required',
+            'user_id' => 'required',
+        ];
+
+        $validateData = $request->validate($rules);
+        if ($request->file('book_image')) {
+            if ($request->oldImage) {
+                Storage::delete($request->oldImage);
+            }
+            $validateData['book_image'] = $request->file('book_image')->store('databuku', 'public');
+        }
+
+        DataBuku::where('id', $id)->update($validateData);
+        return redirect('/databuku')->with('toast_success', 'Buku Berhasil Diedit!');
     }
 
     /**
@@ -82,6 +133,7 @@ class DataBukuController extends Controller
      */
     public function destroy($id)
     {
-        //
+        DataBuku::destroy($id);
+        return redirect('/databuku')->with('toast_success', 'Buku Berhasil Dihapus!');
     }
 }
