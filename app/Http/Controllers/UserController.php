@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
@@ -14,7 +17,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('DataPetugas',[
+        return view('petugas.index',[
             'users'=> User::all()
         ]);
     }
@@ -26,7 +29,9 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('petugas.create',[
+            'users'=> User::all()
+        ]);
     }
 
     /**
@@ -37,7 +42,21 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $cek=$request->validate([
+            'foto' => 'required',
+            'nama' => 'required',
+            'email' => 'required',
+            'password' => 'required',
+            'level' => 'required',
+            'tanggal_join' => 'required',
+            ]);
+            $cek['password']=Hash::make($request->password);
+            if ($request->file('foto')) {
+                $cek['foto'] = $request->file('foto')->store('user', 'public');
+            }
+            User::create($cek);
+            return redirect('/datapetugas')
+            ->with('success', 'Petugas Berhasil Ditambahkan'); 
     }
 
     /**
@@ -59,7 +78,10 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $cek=User::where('id', $id)->first();
+        return view('petugas.edit', [
+            'users' => $cek,
+        ]);
     }
 
     /**
@@ -71,7 +93,27 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $cek=$request->validate([
+            'foto' => 'required',
+            'nama' => 'required',
+            'email' => 'required',
+            'password' => 'required',
+            'level' => 'required',
+            'tanggal_join' => 'required',
+            ]);
+        $cek['password']=Hash::make($request->password);
+
+        if ($request->file('foto')) {
+            if ($request->oldImage) {
+                Storage::delete($request->oldImage);
+            }
+            $cek['foto'] = $request->file('foto')->store('users', 'public');
+        }
+
+        User::where('id', $id)->update($cek);
+
+
+        return redirect('/datapetugas')->with('toast_success', 'Petugas berhasil di edit!');
     }
 
     /**
@@ -82,6 +124,7 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        User::destroy($id);
+        return redirect('/datapetugas')->with('toast_success', 'Petugas berhasil di hapus!');
     }
 }

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\DataAnggota;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 class DataAnggotaController extends Controller
 {
@@ -14,7 +16,7 @@ class DataAnggotaController extends Controller
      */
     public function index()
     {
-        return view('DataAnggota',[
+        return view('anggota.index',[
             'data_anggotas'=> DataAnggota::all()
         ]);
     }
@@ -26,18 +28,33 @@ class DataAnggotaController extends Controller
      */
     public function create()
     {
-        //
+        return view('anggota.create',[
+            'data_anggotas'=> DataAnggota::all()
+        ]);
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        //
+        $cek=$request->validate([
+            'image' => 'required',
+            'nama' => 'required',
+            'jeniskelamin' => 'required',
+            'alamat' => 'required',
+            'notelp' => 'required',
+            'tanggallahir' => 'required',
+            ]);
+            if ($request->file('image')) {
+                $cek['image'] = $request->file('image')->store('image', 'public');
+            }
+            DataAnggota::create($cek);
+            return redirect('/dataanggota')
+            ->with('success', 'Anggota Berhasil Ditambahkan'); 
     }
 
     /**
@@ -48,7 +65,10 @@ class DataAnggotaController extends Controller
      */
     public function show($id)
     {
-        //
+        $cek=DataAnggota::where('id', $id)->first();
+        return view('anggota.detail', [
+            'data_anggotas' => $cek,
+        ]);
     }
 
     /**
@@ -59,7 +79,10 @@ class DataAnggotaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $cek=DataAnggota::where('id', $id)->first();
+        return view('anggota.edit', [
+            'data_anggotas' => $cek,
+        ]);
     }
 
     /**
@@ -71,7 +94,27 @@ class DataAnggotaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $rules = [
+            'image' => 'required',
+            'nama' => 'required',
+            'jeniskelamin' => 'required',
+            'alamat' => 'required',
+            'notelp' => 'required',
+            'tanggallahir' => 'required',
+        ];
+
+        $validatedata = $request->validate($rules);
+        if ($request->file('image')) {
+            if ($request->oldImage) {
+                Storage::delete($request->oldImage);
+            }
+            $validatedata['image'] = $request->file('image')->store('dataanggota', 'public');
+        }
+
+        DataAnggota::where('id', $id)->update($validatedata);
+
+
+        return redirect('/dataanggota')->with('toast_success', 'Anggota berhasil di edit!');
     }
 
     /**
@@ -82,6 +125,7 @@ class DataAnggotaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        DataAnggota::destroy($id);
+        return redirect('/dataanggota')->with('toast_success', 'Anggota berhasil di hapus!');
     }
 }

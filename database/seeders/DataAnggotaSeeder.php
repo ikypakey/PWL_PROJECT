@@ -16,7 +16,6 @@ class DataAnggotaSeeder extends Seeder
     {
         DB::table('data_anggotas')->insert([
             [
-                'id' => '101',
                 'image' => '',
                 'nama' => 'Najwa syarifah',
                 'jeniskelamin' => 'Perempuan',
@@ -25,7 +24,6 @@ class DataAnggotaSeeder extends Seeder
                 'tanggallahir' => '2002-12-08',
             ],
             [
-                'id' => '102',
                 'image' => '',
                 'nama' => 'Renata Putri',
                 'alamat' => 'jl. warungdowo kabupaten Pasuruan',
@@ -34,7 +32,6 @@ class DataAnggotaSeeder extends Seeder
                 'tanggallahir' => '2002-09-05',
             ],
             [
-                'id' => '103',
                 'image' => '',
                 'nama' => 'Prayogo makarya',
                 'alamat' => 'jl. purwosari kabupaten Pasuruan',
