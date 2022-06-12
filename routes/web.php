@@ -5,6 +5,7 @@ use App\Http\Controllers\DataBukuController;
 use App\Http\Controllers\DataKategoriController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
