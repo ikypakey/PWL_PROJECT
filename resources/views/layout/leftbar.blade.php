@@ -1,19 +1,19 @@
 <div class="leftside-menu">
     
     <!-- LOGO -->
-    <a href="index.html" class="logo text-center logo-light">
+    <a href="/" class="logo text-center logo-light">
         <span class="logo-lg">
-            <img src="assets/images/logosipus.png" alt="" height="105" >
+            <img src="/assets/images/logosipus.png" alt="" height="105" >
         </span>
     </a>
 
     <!-- LOGO -->
-    <a href="index.html" class="logo text-center logo-dark">
+    <a href="/" class="logo text-center logo-dark">
         <span class="logo-lg">
-            <img src="assets/images/logo-dark.png" alt="" height="16">
+            <img src="/assets/images/logo-dark.png" alt="" height="16">
         </span>
         <span class="logo-sm">
-            <img src="assets/images/logo_sm_dark.png" alt="" height="16">
+            <img src="/assets/images/logo_sm_dark.png" alt="" height="16">
         </span>
     </a>
 
@@ -23,12 +23,13 @@
         <ul class="side-nav">
 
             <li class="side-nav-item">
-                <a data-bs-toggle="collapse" href="#sidebarDashboards" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link">
-                    <br><i class="uil-home-alt"></i>
-                    <span class="badge bg-success float-end"></span>
+                <a  href="/" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link">
+                    <br><i class="uil-home-alt" href="/"></i>
+                    <span class="badge bg-success float-end" href="/"></span>
                     <span> Dashboards </span>
+                    
                 </a>
-                <div class="collapse" id="sidebarDashboards">
+                {{-- <div class="collapse" id="sidebarDashboards">
                     <ul class="side-nav-second-level">
                         <li>
                             <a href="dashboard-analytics.html">Analytics</a>
@@ -43,7 +44,7 @@
                             <a href="dashboard-projects.html">Projects</a>
                         </li>
                     </ul>
-                </div>
+                </div> --}}
             </li>
 
             <li class="side-nav-title side-nav-item">Data</li>

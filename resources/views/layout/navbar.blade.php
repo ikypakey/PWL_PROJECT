@@ -12,29 +12,29 @@
         </li>
         <li class="dropdown notification-list topbar-dropdown">
             <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                <img src="assets/images/flags/us.jpg" alt="user-image" class="me-0 me-sm-1" height="12"> 
+                <img src="/assets/images/flags/us.jpg" alt="user-image" class="me-0 me-sm-1" height="12"> 
                 <span class="align-middle d-none d-sm-inline-block">English</span> <i class="mdi mdi-chevron-down d-none d-sm-inline-block align-middle"></i>
             </a>
             <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu">
 
                 <!-- item-->
                 <a href="javascript:void(0);" class="dropdown-item notify-item">
-                    <img src="assets/images/flags/germany.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">German</span>
+                    <img src="/assets/images/flags/germany.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">German</span>
                 </a>
 
                 <!-- item-->
                 <a href="javascript:void(0);" class="dropdown-item notify-item">
-                    <img src="assets/images/flags/italy.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">Italian</span>
+                    <img src="/assets/images/flags/italy.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">Italian</span>
                 </a>
 
                 <!-- item-->
                 <a href="javascript:void(0);" class="dropdown-item notify-item">
-                    <img src="assets/images/flags/spain.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">Spanish</span>
+                    <img src="/assets/images/flags/spain.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">Spanish</span>
                 </a>
 
                 <!-- item-->
                 <a href="javascript:void(0);" class="dropdown-item notify-item">
-                    <img src="assets/images/flags/russia.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">Russian</span>
+                    <img src="/assets/images/flags/russia.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">Russian</span>
                 </a>
 
             </div>
@@ -139,19 +139,19 @@
                     <div class="row g-0">
                         <div class="col">
                             <a class="dropdown-icon-item" href="#">
-                                <img src="assets/images/brands/slack.png" alt="slack">
+                                <img src="/assets/images/brands/slack.png" alt="slack">
                                 <span>Slack</span>
                             </a>
                         </div>
                         <div class="col">
                             <a class="dropdown-icon-item" href="#">
-                                <img src="assets/images/brands/github.png" alt="Github">
+                                <img src="/assets/images/brands/github.png" alt="Github">
                                 <span>GitHub</span>
                             </a>
                         </div>
                         <div class="col">
                             <a class="dropdown-icon-item" href="#">
-                                <img src="assets/images/brands/dribbble.png" alt="dribbble">
+                                <img src="/assets/images/brands/dribbble.png" alt="dribbble">
                                 <span>Dribbble</span>
                             </a>
                         </div>
@@ -160,19 +160,19 @@
                     <div class="row g-0">
                         <div class="col">
                             <a class="dropdown-icon-item" href="#">
-                                <img src="assets/images/brands/bitbucket.png" alt="bitbucket">
+                                <img src="/assets/images/brands/bitbucket.png" alt="bitbucket">
                                 <span>Bitbucket</span>
                             </a>
                         </div>
                         <div class="col">
                             <a class="dropdown-icon-item" href="#">
-                                <img src="assets/images/brands/dropbox.png" alt="dropbox">
+                                <img src="/assets/images/brands/dropbox.png" alt="dropbox">
                                 <span>Dropbox</span>
                             </a>
                         </div>
                         <div class="col">
                             <a class="dropdown-icon-item" href="#">
-                                <img src="assets/images/brands/g-suite.png" alt="G Suite">
+                                <img src="/assets/images/brands/g-suite.png" alt="G Suite">
                                 <span>G Suite</span>
                             </a>
                         </div>
@@ -191,11 +191,11 @@
         <li class="dropdown notification-list">
             <a class="nav-link dropdown-toggle nav-user arrow-none me-0" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                 <span class="account-user-avatar"> 
-                    <img src="assets/images/users/avatar-1.jpg" alt="user-image" class="rounded-circle">
+                    <img src="/assets/images/users/avatar-1.jpg" alt="user-image" class="rounded-circle">
                 </span>
                 <span>
-                    <span class="account-user-name">Ahmad Dani</span>
-                    <span class="account-position">Admin</span>
+                    <span class="account-user-name">{{auth()->user()->nama}}</span>
+                    <span class="account-position">{{auth()->user()->level}}</span>
                 </span>
             </a>
             <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
