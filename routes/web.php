@@ -8,6 +8,7 @@ use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes

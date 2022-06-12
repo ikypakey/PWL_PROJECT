@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\DataKategori;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class DataKategoriController extends Controller
 {
@@ -14,7 +15,7 @@ class DataKategoriController extends Controller
      */
     public function index()
     {
-         return view('DataKategori',[
+         return view('kategori.index',[
             'data_kategoris'=> DataKategori::all()
         ]);
     }
@@ -26,7 +27,10 @@ class DataKategoriController extends Controller
      */
     public function create()
     {
-        //
+        return view('kategori.create',[
+            'data_kategoris'=> DataKategori::all()
+        ]);
+
     }
 
     /**
@@ -37,7 +41,18 @@ class DataKategoriController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $cek=$request->validate([
+            'nama_kategori' => 'required',
+            'image' => 'required',
+            'deskripsi' => 'required',
+            ]);
+            if ($request->file('image')) {
+                $cek['image'] = $request->file('image')->store('data_kategoris', 'public');
+            }
+            DataKategori::create($cek);
+            return redirect('/datakategori')
+            ->with('success', 'Kategori Buku Berhasil Ditambahkan');
+
     }
 
     /**
@@ -59,7 +74,11 @@ class DataKategoriController extends Controller
      */
     public function edit($id)
     {
-        //
+        $tes=DataKategori::where('id', $id)->first();
+        return view('kategori.edit', [
+            'data_kategoris' => $tes,
+        ]);
+
     }
 
     /**
@@ -71,7 +90,24 @@ class DataKategoriController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $rules = [
+            'nama_kategori' => 'required',
+            'image' => 'required',
+            'deskripsi' => 'required',
+        ];
+
+        $validateData = $request->validate($rules);
+        if ($request->file('image')) {
+            if ($request->oldImage) {
+                Storage::delete($request->oldImage);
+            }
+            $validateData['image'] = $request->file('image')->store('datakategori', 'public');
+        }
+
+        DataKategori::where('id', $id)->update($validateData);
+        return redirect('/datakategori')->with('toast_success', 'Kategori Berhasil Diedit!');
+
+
     }
 
     /**
@@ -82,6 +118,8 @@ class DataKategoriController extends Controller
      */
     public function destroy($id)
     {
-        //
+        DataKategori::destroy($id);
+        return redirect('/datakategori')->with('toast_success', 'Kategori Buku Berhasil Dihapus!');
+    
     }
 }
