@@ -23,6 +23,7 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 
 Route::get('/', [DashboardController::class,'index'])->middleware('auth');
+Route::get('/anggota/pdf', [DataAnggotaController::class, 'cetak_pdf']);
 Route::resource('/dataanggota', DataAnggotaController::class);
 Route::resource('/datapetugas', UserController::class);
 Route::resource('/databuku', DataBukuController::class);

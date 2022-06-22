@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\DataAnggota;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
@@ -50,7 +51,7 @@ class DataAnggotaController extends Controller
             'tanggallahir' => 'required',
             ]);
             if ($request->file('image')) {
-                $cek['image'] = $request->file('image')->store('image', 'public');
+                $cek['image'] = $request->file('image')->store('data_anggotas', 'public');
             }
             DataAnggota::create($cek);
             return redirect('/dataanggota')
@@ -108,7 +109,7 @@ class DataAnggotaController extends Controller
             if ($request->oldImage) {
                 Storage::delete($request->oldImage);
             }
-            $validatedata['image'] = $request->file('image')->store('dataanggota', 'public');
+            $validatedata['image'] = $request->file('image')->store('data_anggotas', 'public');
         }
 
         DataAnggota::where('id', $id)->update($validatedata);
@@ -127,5 +128,11 @@ class DataAnggotaController extends Controller
     {
         DataAnggota::destroy($id);
         return redirect('/dataanggota')->with('toast_success', 'Anggota berhasil di hapus!');
+    }
+
+    public function cetak_pdf(){
+        $articles = DataAnggota::all();
+        $pdf = PDF::loadview('anggota.pdf',['data_anggotas'=>$articles]);
+        return $pdf->stream();
     }
 }

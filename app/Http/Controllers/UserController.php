@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
+use App\Models\DataAnggota;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 
-class UserController extends Controller
+class DataAnggotaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +17,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('petugas.index',[
-            'users'=> User::all()
+        return view('anggota.index',[
+            'data_anggotas'=> DataAnggota::all()
         ]);
     }
 
@@ -29,34 +29,33 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('petugas.create',[
-            'users'=> User::all()
+        return view('anggota.create',[
+            'data_anggotas'=> DataAnggota::all()
         ]);
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
         $cek=$request->validate([
-            'foto' => 'required',
+            'image' => 'required',
             'nama' => 'required',
-            'email' => 'required',
-            'password' => 'required',
-            'level' => 'required',
-            'tanggal_join' => 'required',
+            'jeniskelamin' => 'required',
+            'alamat' => 'required',
+            'notelp' => 'required',
+            'tanggallahir' => 'required',
             ]);
-            $cek['password']=Hash::make($request->password);
-            if ($request->file('foto')) {
-                $cek['foto'] = $request->file('foto')->store('user', 'public');
+            if ($request->file('image')) {
+                $cek['image'] = $request->file('image')->store('data_anggotas', 'public');
             }
-            User::create($cek);
-            return redirect('/datapetugas')
-            ->with('success', 'Petugas Berhasil Ditambahkan'); 
+            DataAnggota::create($cek);
+            return redirect('/dataanggota')
+            ->with('success', 'Anggota Berhasil Ditambahkan'); 
     }
 
     /**
@@ -67,7 +66,10 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        $cek=DataAnggota::where('id', $id)->first();
+        return view('anggota.detail', [
+            'data_anggotas' => $cek,
+        ]);
     }
 
     /**
@@ -78,9 +80,9 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $cek=User::where('id', $id)->first();
-        return view('petugas.edit', [
-            'users' => $cek,
+        $cek=DataAnggota::where('id', $id)->first();
+        return view('anggota.edit', [
+            'data_anggotas' => $cek,
         ]);
     }
 
@@ -93,27 +95,27 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $cek=$request->validate([
-            'foto' => 'required',
+        $rules = [
+            'image' => 'required',
             'nama' => 'required',
-            'email' => 'required',
-            'password' => 'required',
-            'level' => 'required',
-            'tanggal_join' => 'required',
-            ]);
-        $cek['password']=Hash::make($request->password);
+            'jeniskelamin' => 'required',
+            'alamat' => 'required',
+            'notelp' => 'required',
+            'tanggallahir' => 'required',
+        ];
 
-        if ($request->file('foto')) {
+        $validatedata = $request->validate($rules);
+        if ($request->file('image')) {
             if ($request->oldImage) {
                 Storage::delete($request->oldImage);
             }
-            $cek['foto'] = $request->file('foto')->store('users', 'public');
+            $validatedata['image'] = $request->file('image')->store('data_anggotas', 'public');
         }
 
-        User::where('id', $id)->update($cek);
+        DataAnggota::where('id', $id)->update($validatedata);
 
 
-        return redirect('/datapetugas')->with('toast_success', 'Petugas berhasil di edit!');
+        return redirect('/dataanggota')->with('toast_success', 'Anggota berhasil di edit!');
     }
 
     /**
@@ -124,7 +126,13 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        User::destroy($id);
-        return redirect('/datapetugas')->with('toast_success', 'Petugas berhasil di hapus!');
+        DataAnggota::destroy($id);
+        return redirect('/dataanggota')->with('toast_success', 'Anggota berhasil di hapus!');
+    }
+
+    public function cetak_pdf(){
+        $articles = DataAnggota::all();
+        $pdf = PDF::loadview('anggota.pdf',['data_anggotas'=>$articles]);
+        return $pdf->stream();
     }
 }
