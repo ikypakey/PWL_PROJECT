@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,            
             DataKategoriSeeder::class,
             DataBukuSeeder::class,
+            PeminjamanSeeder::class,
             
         ]);
 

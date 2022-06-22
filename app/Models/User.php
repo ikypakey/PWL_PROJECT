@@ -47,4 +47,7 @@ class User extends Authenticatable
     public function data_bukus(){
         return $this ->hasMany(DataBuku::class);
     }
+     public function peminjaman(){
+        return $this -> hasMany(Peminjaman::class);
+    }
 }

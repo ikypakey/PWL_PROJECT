@@ -25,4 +25,7 @@ class DataAnggota extends Model
     {
         return 'slug';
     }
+    public function peminjaman(){
+        return $this -> hasMany(Peminjaman::class);
+    }
 }

@@ -95,7 +95,7 @@
                 <div class="collapse" id="sidebarEmail">
                     <ul class="side-nav-second-level">
                         <li>
-                            <a href="apps-email-inbox.html">Data Peminjaman</a>
+                            <a href="/transaksipeminjaman">Data Peminjaman</a>
                         </li>
                         <li>
                             <a href="apps-email-read.html">Data Pengembalian</a>

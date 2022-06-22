@@ -4,6 +4,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DataAnggotaController;
 use App\Http\Controllers\DataBukuController;
 use App\Http\Controllers\DataKategoriController;
+use App\Http\Controllers\PeminjamanController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
@@ -26,6 +27,7 @@ Route::resource('/dataanggota', DataAnggotaController::class);
 Route::resource('/datapetugas', UserController::class);
 Route::resource('/databuku', DataBukuController::class);
 Route::resource('/datakategori', DataKategoriController::class);
+Route::resource('/transaksipeminjaman', PeminjamanController::class);
 
 
 Auth::routes();

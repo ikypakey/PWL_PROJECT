@@ -18,6 +18,9 @@ class DataBuku extends Model
     public function user(){
         return $this ->belongsTo(User::class);
     }
+    public function peminjamans(){
+        return $this -> hasMany(Peminjaman::class);
+    }
     protected $fillable = [
        'judul_buku',
         'kategoris_id',
