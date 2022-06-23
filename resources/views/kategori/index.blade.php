@@ -28,6 +28,7 @@
                     <th>Foto Kategori</th>
                     <th>Deskripsi</th>
                     <th>Action</th>
+                    
 
                   </tr>
                 </thead>

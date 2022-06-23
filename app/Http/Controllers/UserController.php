@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 
-class DataAnggotaController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.

@@ -22,6 +22,7 @@ class Peminjaman extends Migration
             $table->date('tanggal_pinjam');
             $table->integer('lama_peminjaman');
             $table->foreignId('user_id')->constrained();
+            $table->integer('status');
             $table->timestamps();
         });
     }

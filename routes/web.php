@@ -5,6 +5,7 @@ use App\Http\Controllers\DataAnggotaController;
 use App\Http\Controllers\DataBukuController;
 use App\Http\Controllers\DataKategoriController;
 use App\Http\Controllers\PeminjamanController;
+use App\Http\Controllers\PengembalianController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
@@ -29,6 +30,7 @@ Route::resource('/datapetugas', UserController::class);
 Route::resource('/databuku', DataBukuController::class);
 Route::resource('/datakategori', DataKategoriController::class);
 Route::resource('/transaksipeminjaman', PeminjamanController::class);
+Route::get('/pengembalian/{id}', [PengembalianController::class,'pengembalian']);
 
 
 Auth::routes();

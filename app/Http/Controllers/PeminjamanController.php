@@ -3,8 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\DataAnggota;
+use App\Models\DataBuku;
 use App\Models\Peminjaman;
+use App\Models\User;
 use Illuminate\Http\Request;
+
+use function GuzzleHttp\Promise\all;
 
 class PeminjamanController extends Controller
 {
@@ -28,7 +32,12 @@ class PeminjamanController extends Controller
      */
     public function create()
     {
-        //
+         return view('peminjaman.create',[
+            'users'=> User::all(),
+            'data_bukus'=> DataBuku::all(),
+            'data_anggotas'=>DataAnggota::all()
+
+        ]);
     }
 
     /**
@@ -39,7 +48,18 @@ class PeminjamanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       
+        $tes=$request->validate([
+            'anggotas_id' => 'required',
+            'bukus_id' => 'required',
+            'tanggal_pinjam' => 'required',
+            'lama_peminjaman' => 'required',
+            'user_id' => 'required',
+            'status' => 'required',
+            ]);
+            Peminjaman::create($tes);
+            return redirect('/transaksipeminjaman')
+            ->with('success', 'Data Peminjaman Berhasil Ditambahkan');
     }
 
     /**
@@ -59,9 +79,16 @@ class PeminjamanController extends Controller
      * @param  \App\Models\Peminjaman  $peminjaman
      * @return \Illuminate\Http\Response
      */
-    public function edit(Peminjaman $peminjaman)
+    public function edit(Peminjaman $peminjaman, $id)
     {
-        //
+        $tes=Peminjaman::where('id', $id)->first();
+        return view('peminjaman.edit', [
+            'peminjamans' => $tes,
+            'users'=> User::all(),
+            'data_anggotas'=>DataAnggota::all(),
+            'data_bukus'=>DataBuku::all()
+
+        ]);
     }
 
     /**
@@ -71,9 +98,20 @@ class PeminjamanController extends Controller
      * @param  \App\Models\Peminjaman  $peminjaman
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Peminjaman $peminjaman)
+    public function update(Request $request, Peminjaman $peminjaman, $id)
     {
-        //
+        $tes=Peminjaman::where('id', $id)->get();
+        $rules = [
+            'anggotas_id' => 'required',
+            'bukus_id' => 'required',
+            'tanggal_pinjam' => 'required',
+            'lama_peminjaman' => 'required',
+                        
+        ];
+
+        $validateData = $request->validate($rules);
+        Peminjaman::where('id',  $id)->update($validateData);
+        return redirect('/transaksipeminjaman')->with('toast_success', 'Peminjaman Berhasil Diedit!');
     }
 
     /**
@@ -82,8 +120,9 @@ class PeminjamanController extends Controller
      * @param  \App\Models\Peminjaman  $peminjaman
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Peminjaman $peminjaman)
+    public function destroy(Peminjaman $peminjaman,$id)
     {
-        //
+        Peminjaman::destroy($id);
+        return redirect('/transaksipeminjaman')->with('toast_success', 'Peminjaman Berhasil Dihapus!');
     }
 }

@@ -21,7 +21,9 @@ class PeminjamanSeeder extends Seeder
                'bukus_id'=>'1',
                'tanggal_pinjam'=>'2022-06-20',
                'lama_peminjaman'=>7,
-               'user_id'=>'1'
+               'user_id'=>1,
+               'status'=>1,
+            
                
             ],
             [
@@ -29,14 +31,16 @@ class PeminjamanSeeder extends Seeder
                'bukus_id'=>'2',
                'tanggal_pinjam'=>'2022-06-21',
                'lama_peminjaman'=>7,
-               'user_id'=>'2'
+               'user_id'=>2,
+                'status'=>2,
             ],
             [
                'anggotas_id'=>'3',
                'bukus_id'=>'3',
                'tanggal_pinjam'=>'2022-06-22',
                'lama_peminjaman'=>6,
-               'user_id'=>'1'
+               'user_id'=>1,
+                'status'=>2,
             ]
             ]);
     }
