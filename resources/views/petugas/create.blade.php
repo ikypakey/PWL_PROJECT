@@ -28,26 +28,23 @@
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="text" name="email" class="form-control" id="email"
-                            ariadescribedby="email">
+                        <input type="text" name="email" class="form-control" id="email" ariadescribedby="email">
                     </div>
                     <div class="form-group">
                         <label for="password">Password</label>
-                        <input type="password" name="password" class="form-control" id="password"
-                            ariadescribedby="password">
+                        <input type="password" name="password" class="form-control" id="password" ariadescribedby="password">
                     </div>
                     <div class="form-group">
                         <label for="level">Level</label>
                         <select class="form-select" aria-label="Default select example" name="level">
-                            <option selected value="petugas">petugas</option>
-                            <option value="admin">admin</option>
+                            <option selected value="petugas">Petugas</option>
+                            <option value="admin">Admin</option>
                           </select>
                     </div>
                     <div class="form-group">
                         <label for="tanggal_join">Tanggal Join</label>
                         <input type="date" name="tanggal_join" class="form-control" id="tanggal_join" ariadescribedby="tanggal_join">
                     </div><br>
-                    
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>

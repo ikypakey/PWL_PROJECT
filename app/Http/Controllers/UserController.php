@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\DataAnggota;
+use App\Models\User;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -17,8 +18,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('anggota.index',[
-            'data_anggotas'=> DataAnggota::all()
+        return view('petugas.index',[
+            'users'=> User::all()
         ]);
     }
 
@@ -29,8 +30,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('anggota.create',[
-            'data_anggotas'=> DataAnggota::all()
+        return view('petugas.create',[
+            'users'=> User::all()
         ]);
     }
 
@@ -43,19 +44,20 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $cek=$request->validate([
-            'image' => 'required',
+            'foto' => 'required',
             'nama' => 'required',
-            'jeniskelamin' => 'required',
-            'alamat' => 'required',
-            'notelp' => 'required',
-            'tanggallahir' => 'required',
+            'email' => 'required',
+            'password'=>'required',
+            'level'=>'required',
+            'tanggal_join' => 'required',
+
             ]);
-            if ($request->file('image')) {
-                $cek['image'] = $request->file('image')->store('data_anggotas', 'public');
+            if ($request->file('foto')) {
+                $cek['foto'] = $request->file('foto')->store('users', 'public');
             }
-            DataAnggota::create($cek);
-            return redirect('/dataanggota')
-            ->with('success', 'Anggota Berhasil Ditambahkan'); 
+            User::create($cek);
+            return redirect('/datapetugas')
+            ->with('success', 'Petugas Berhasil Ditambahkan'); 
     }
 
     /**
@@ -66,9 +68,9 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $cek=DataAnggota::where('id', $id)->first();
-        return view('anggota.detail', [
-            'data_anggotas' => $cek,
+        $cek=User::where('id', $id)->first();
+        return view('petugas.detail', [
+            'users' => $cek,
         ]);
     }
 
@@ -80,9 +82,9 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $cek=DataAnggota::where('id', $id)->first();
-        return view('anggota.edit', [
-            'data_anggotas' => $cek,
+        $cek=User::where('id', $id)->first();
+        return view('petugas.edit', [
+            'users' => $cek,
         ]);
     }
 
@@ -96,26 +98,26 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         $rules = [
-            'image' => 'required',
+            'foto' => 'required',
             'nama' => 'required',
-            'jeniskelamin' => 'required',
-            'alamat' => 'required',
-            'notelp' => 'required',
-            'tanggallahir' => 'required',
+            'email' => 'required',
+            'password'=>'required',
+            'level'=>'required',
+            'tanggal_join' => 'required',
         ];
 
         $validatedata = $request->validate($rules);
-        if ($request->file('image')) {
+        if ($request->file('foto')) {
             if ($request->oldImage) {
                 Storage::delete($request->oldImage);
             }
-            $validatedata['image'] = $request->file('image')->store('data_anggotas', 'public');
+            $validatedata['foto'] = $request->file('foto')->store('users', 'public');
         }
 
-        DataAnggota::where('id', $id)->update($validatedata);
+        User::where('id', $id)->update($validatedata);
 
 
-        return redirect('/dataanggota')->with('toast_success', 'Anggota berhasil di edit!');
+        return redirect('/datapetugas')->with('toast_success', 'Petugas berhasil di edit!');
     }
 
     /**
@@ -126,13 +128,13 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        DataAnggota::destroy($id);
-        return redirect('/dataanggota')->with('toast_success', 'Anggota berhasil di hapus!');
+        User::destroy($id);
+        return redirect('/datapetugas')->with('toast_success', 'Petugas berhasil di hapus!');
     }
 
     public function cetak_pdf(){
-        $articles = DataAnggota::all();
-        $pdf = PDF::loadview('anggota.pdf',['data_anggotas'=>$articles]);
+        $articles = User::all();
+        $pdf = PDF::loadview('petugas.pdf',['users'=>$articles]);
         return $pdf->stream();
     }
 }

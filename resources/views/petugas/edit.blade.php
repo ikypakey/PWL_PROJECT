@@ -47,8 +47,8 @@
                     <div class="form-group">
                         <label for="level">Level</label>
                         <select class="form-select" aria-label="Default select example" name="level">
-                            <option selected value="petugas">petugas</option>
-                            <option value="admin">admin</option>
+                            <option selected value="petugas">Petugas</option>
+                            <option value="admin">Admin</option>
                           </select>
                     </div>
                     <div class="form-group">
