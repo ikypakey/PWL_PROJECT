@@ -25,7 +25,6 @@
                         <label for="anggotas_id">Nama Peminjam</label>
                         <select class="form-select" name="anggotas_id">
                          @foreach ($data_anggotas as $anggota)
-
                          <option value="{{ $anggota->id }}" >
                          {{ $anggota->nama }} </option>
                          @endforeach

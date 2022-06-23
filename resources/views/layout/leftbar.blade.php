@@ -57,12 +57,20 @@
                 </a>
                 <div class="collapse" id="sidebarEcommerce">
                     <ul class="side-nav-second-level">
+                        
+                        @if(Auth::user()->level=='Admin')
                         <li>
                             <a href="/dataanggota">Data Anggota</a>
                         </li>
                         <li>
                             <a href="/datapetugas">Data Petugas</a>
                         </li>
+                        @else
+                        <li>
+                            <a href="/dataanggota">Data Anggota</a>
+                        </li>
+                        @endif
+
                     </ul>
                 </div>
             </li>
@@ -98,7 +106,7 @@
                             <a href="/transaksipeminjaman">Data Peminjaman</a>
                         </li>
                         <li>
-                            <a href="apps-email-read.html">Data Pengembalian</a>
+                            <a href="/pengembalian">Data Pengembalian</a>
                         </li>
                     </ul>
                 </div>

@@ -1,12 +1,16 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\DataAnggotaController;
 use App\Http\Controllers\DataBukuController;
 use App\Http\Controllers\DataKategoriController;
 use App\Http\Controllers\PeminjamanController;
 use App\Http\Controllers\PengembalianController;
+use App\Http\Controllers\PengembalianController1;
+use App\Http\Controllers\TransaksiController;
 use App\Http\Controllers\UserController;
+use App\Models\Pengembalian;
 use Illuminate\Support\Facades\Route;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
@@ -30,7 +34,8 @@ Route::resource('/datapetugas', UserController::class);
 Route::resource('/databuku', DataBukuController::class);
 Route::resource('/datakategori', DataKategoriController::class);
 Route::resource('/transaksipeminjaman', PeminjamanController::class);
-Route::get('/pengembalian/{id}', [PengembalianController::class,'pengembalian']);
+Route::get('/transaksipengembalian/{id}', [TransaksiController::class, 'pengembalian']);
+Route::resource('/pengembalian', PengembalianController::class);
 
 
 Auth::routes();

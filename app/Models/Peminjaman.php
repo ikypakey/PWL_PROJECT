@@ -26,4 +26,7 @@ class Peminjaman extends Model
     public function user(){
         return $this -> belongsTo(User::class);
     }
+    public function pengembalian(){
+        return $this -> hasOne(Pengembalian::class);
+    }
 }

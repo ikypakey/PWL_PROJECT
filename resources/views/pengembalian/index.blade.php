@@ -5,8 +5,8 @@
     <div class="container-fluid">
 
         <!-- Page Heading -->
-        <h1 class="h3 mb-2 text-gray-800">Daftar Transaksi Peminjaman Buku</h1>
-        <p class="mb-4">Berikut Merupakan Daftar Transaksi Peminjaman Buku Dalam Perpustakaan</p>
+        <h1 class="h3 mb-2 text-gray-800">Daftar Transaksi Pengembalian Buku</h1>
+        <p class="mb-4">Berikut Merupakan Daftar Transaksi Pengembalian Buku Dalam Perpustakaan</p>
 
       @if(Session::has('berhasil'))
           <div class="alert alert-success">
@@ -18,45 +18,46 @@
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
           <div class="card-body">
-              <a href="/transaksipeminjaman/create" class="btn mb-3 btn-primary btn-icon-split btn-sm">Tambah Data Peminjaman</a>
+              <a href="" class="btn mb-3 btn-primary btn-icon-split btn-sm">Tambah Data Pengembalian</a>
+              <a href="" class="btn mb-3 btn-primary btn-icon-split btn-sm">Cetak Data Pengembalian</a>
             <div class="table-responsive">
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
-                <h5>Keterlambatan : Denda Rp 5000/hari</h5>
                   <tr>
-                    <th>Id Peminjaman</th>
+                    <th>Id Pengembalian</th>
                     <th>Nama Peminjam</th>
                     <th>Nama Buku</th>
                     <th>Tanggal Peminjaman</th>
-                    <th>Lama Peminjaman</th>
+                    <th>Tanggal Pengembalian</th>
                     <th>Petugas</th>
                     <th>Status</th>
+                    <th>Denda</th>
                     <th>Action</th>
                   </tr>
                 </thead>
                 <tbody>
                   
-                  @foreach ($peminjaman as $pinjam)
+                  @foreach ($pengembalians as $kembali)
                   <tr>
-                    <td>{{$pinjam->id}}</td>
-                    <td class="text-capitalize">{{$pinjam->anggota->nama}}</td>
-                    <td>{{$pinjam->buku->judul_buku}}</td>
-                    <td>{{$pinjam->tanggal_pinjam}}</td>
-                    <td>{{$pinjam->lama_peminjaman}} Hari</td>
-                    <td>{{$pinjam->user->nama}}</td>
-                    <td>@if($pinjam->status==1)
-                        <span class="badge bg-warning text-dark">Dipinjam</span>
+                    <td>{{$kembali->id}}</td>
+                    <td class="text-capitalize">{{$kembali->peminjaman->anggota->nama}}</td>
+                    <td>{{$kembali->peminjaman->buku->judul_buku}}</td>
+                    <td>{{$kembali->peminjaman->tanggal_pinjam}}</td>
+                    <td>{{$kembali->tanggal_kembali}}</td>
+                    <td>{{$kembali->peminjaman->user->nama}}</td>
+                    <td>@if($kembali->peminjaman->status==1)
+                        <span class="badge bg-warning text-dark">Dikembali</span>
                         @else
                         <span class="badge bg-success">Dikembalikan</span>
                         @endif
                     </td>
+                    <td>@if($kembali->denda)
+                        Rp. {{number_format($kembali->denda)}}
+                        @else
+                        -
+                        @endif</td>
                     <td>
-                      <a class="btn btn-secondary" href="/transaksipengembalian/{{$pinjam->id}}" @if ($pinjam -> status == 2)
-                        style="pointer-events: none;"
-                    @endif
-                    ><i class="bi bi-gear"></i></a>
-                      <a class="btn btn-primary" href="/transaksipeminjaman/{{$pinjam->id}}/edit"><i class="bi bi-pencil-square"></i></a>
-                      <form action="/transaksipeminjaman/{{$pinjam->id}}" method="POST">@csrf
+                      <form action="/pengembalian/{{$kembali->id}}" method="POST">@csrf
                         @method('DELETE')
                         <button onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data Ini? ')" class="btn btn-danger"><i class="bi bi-trash"></i></button></form>
                     </td>
