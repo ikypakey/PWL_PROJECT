@@ -19,6 +19,7 @@
         <div class="card shadow mb-4">
           <div class="card-body">
                <a href="/datakategori/create" class="btn mb-3 btn-primary btn-icon-split btn-sm">Tambah Data Kategori</a>
+               <a href="/kategori/printpdf" class="btn mb-3 btn-success btn-icon-split btn-sm">Print PDF</a>
             <div class="table-responsive">
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>

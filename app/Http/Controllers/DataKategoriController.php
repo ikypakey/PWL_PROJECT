@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\DataKategori;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class DataKategoriController extends Controller
 {
@@ -121,5 +122,11 @@ class DataKategoriController extends Controller
         DataKategori::destroy($id);
         return redirect('/datakategori')->with('toast_success', 'Kategori Buku Berhasil Dihapus!');
     
+    }
+    
+      public function cetak_pdf(){
+        $articles = DataKategori::all();
+        $pdf = PDF::loadview('kategori.printpdf',['data_kategoris'=>$articles]);
+        return $pdf->stream();
     }
 }
