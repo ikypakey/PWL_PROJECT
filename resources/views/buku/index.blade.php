@@ -19,6 +19,7 @@
         <div class="card shadow mb-4">
           <div class="card-body">
               <a href="/databuku/create" class="btn mb-3 btn-primary btn-icon-split btn-sm">Tambah Data Buku</a>
+              <a href="/buku/printpdf" class="btn mb-3 btn-success btn-icon-split btn-sm">Cetak PDF</a>
             <div class="table-responsive">
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
@@ -40,7 +41,7 @@
                   
                   @foreach ($data_bukus as $buku)
                   <tr>
-                    <td>{{$loop -> iteration}}</td>
+                    <td>{{$buku -> id}}</td>
                     <td class="text-capitalize">{{$buku->judul_buku}}</td>
                     <td>{{$buku->kategoris_id}}</td>
                     <td><img src="{{ asset('storage/'.$buku -> book_image) }}" alt="" height="90px" width="90px" class="rounded" style="object-fit: cover"></td>

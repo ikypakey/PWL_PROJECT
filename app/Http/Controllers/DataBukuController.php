@@ -7,6 +7,7 @@ use App\Models\DataKategori;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class DataBukuController extends Controller
 {
@@ -135,5 +136,11 @@ class DataBukuController extends Controller
     {
         DataBuku::destroy($id);
         return redirect('/databuku')->with('toast_success', 'Buku Berhasil Dihapus!');
+    }
+    
+    public function cetak_pdf(){
+        $articles = DataBuku::all();
+        $pdf = PDF::loadview('buku.printpdf',['data_bukus'=>$articles]);
+        return $pdf->stream();
     }
 }
