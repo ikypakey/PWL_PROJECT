@@ -10,11 +10,12 @@
  	 	} 
  	</style> 
  	<center> 
- 	 	<h5>Laporan Data Anggota</h4> 
+		<h5>SISTEM INFORMASI MANAJEMEN PERPUSTAKAAN ( SIPUS )</h4> 
+ 	 	<h5>Hasil Laporan Data Anggota</h4> 
  	</center>
 	<h6>Tanggal : <?php $tgl=date('d - m - Y');
 		echo $tgl; ?></h6> 
- 	<table class="static" align="center" rules="all" border="2px" style="width: 95%;">
+ 	<table class="table table-bordered 2px">
  	 	<thead> 
  	 	 	<tr> 
  	 	 	 	<th>No</th> 
