@@ -38,7 +38,7 @@
                 <td>{{$pdf->penerbit}}</td>
                 <td>{{$pdf->tahun_terbit}}</td> 
                 <td>{{$pdf->jumlah_halaman}}</td> 
-                <td>{{$pdf->user_id}}</td> 
+                <td>{{$pdf->user->nama}}</td> 
  	 	 	</tr> 
  	 	 	@endforeach 
  	 	</tbody> 
