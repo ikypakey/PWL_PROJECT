@@ -31,6 +31,7 @@ Route::get('/', [DashboardController::class,'index'])->middleware('auth');
 Route::get('/anggota/pdf', [DataAnggotaController::class, 'cetak_pdf']);
 Route::resource('/dataanggota', DataAnggotaController::class);
 Route::resource('/datapetugas', UserController::class);
+Route::get('/petugas/pdf', [UserController::class, 'cetak_pdf']);
 Route::resource('/databuku', DataBukuController::class);
 Route::resource('/datakategori', DataKategoriController::class);
 Route::resource('/transaksipeminjaman', PeminjamanController::class);

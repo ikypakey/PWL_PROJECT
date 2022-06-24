@@ -17,7 +17,7 @@ class UserSeeder extends Seeder
     {
         DB::table('users')->insert([
             [
-                'foto' => '',
+                'foto' => '/image/admin-male.png',
                 'nama' => 'Ahmad Dani Maulana',
                 'email' => 'ahmaddanimaulana@gmail.com',
                 'password' => Hash::make('1234'),
@@ -25,7 +25,7 @@ class UserSeeder extends Seeder
                 'tanggal_join' => '2022-06-04',
             ],
             [
-                'foto' => '',
+                'foto' => '/image/admin-male.png',
                 'nama' => 'Muhammad Rizki Mubarok',
                 'email' => 'muhammadrizkimubarok@gmail.com',
                 'password' => Hash::make('1234'),
@@ -33,12 +33,28 @@ class UserSeeder extends Seeder
                 'tanggal_join' => '2022-06-04',
             ],
             [
-                'foto' => '',
+                'foto' => '/image/admin-male.png',
                 'nama' => 'Alaika Rohman',
                 'email' => 'alaikarohman@gmail.com',
                 'password' => Hash::make('1234'),
                 'level' => 'Petugas',
                 'tanggal_join' => '2022-06-04',
+            ],
+            [
+                'foto' => '/image/admin-male.png',
+                'nama' => 'Agus Leman Gunawan',
+                'email' => 'agus@gmail.com',
+                'password' => Hash::make('1234'),
+                'level' => 'Petugas',
+                'tanggal_join' => '2022-06-20',
+            ],
+            [
+                'foto' => '/image/admin-female.png',
+                'nama' => 'Cindy Tanuwidjaja',
+                'email' => 'cindy@gmail.com',
+                'password' => Hash::make('1234'),
+                'level' => 'Petugas',
+                'tanggal_join' => '2022-06-20',
             ]
             ]);
     }

@@ -14,6 +14,7 @@
     <div class="card shadow mb-4">
       <div class="card-body">
         <a href="/datapetugas/create" class="btn mb-3 btn-primary btn-icon-split btn-sm">Tambah Data Petugas</a>
+        <a href="/petugas/pdf" class="btn mb-3 btn-primary btn-icon-split btn-sm">Cetak PDF</a>
       </a>
         <div class="table-responsive">
           <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
