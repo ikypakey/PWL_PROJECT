@@ -58,7 +58,7 @@
                 <div class="collapse" id="sidebarEcommerce">
                     <ul class="side-nav-second-level">
                         
-                        @if(Auth::user()->level=='Admin')
+                        @if(auth()->user()->level=='Admin')
                         <li>
                             <a href="/dataanggota">Data Anggota</a>
                         </li>
@@ -113,7 +113,7 @@
             </li>
 
             <li class="side-nav-item">
-                <a href="apps-file-manager.html" class="side-nav-link">
+                <a href="/laporan" class="side-nav-link">
                     <i class="uil-folder-plus"></i>
                     <span> Laporan </span>
                 </a>
