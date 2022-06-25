@@ -7,6 +7,7 @@ use App\Models\DataBuku;
 use App\Models\Peminjaman;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 use function GuzzleHttp\Promise\all;
 
@@ -124,5 +125,10 @@ class PeminjamanController extends Controller
     {
         Peminjaman::destroy($id);
         return redirect('/transaksipeminjaman')->with('toast_success', 'Peminjaman Berhasil Dihapus!');
+    }
+       public function cetak_pdf(){
+        $articles = Peminjaman::all();
+        $pdf = PDF::loadview('peminjaman.printpdf',['peminjaman'=>$articles]);
+        return $pdf->stream();
     }
 }

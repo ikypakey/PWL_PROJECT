@@ -19,11 +19,13 @@
         <div class="card shadow mb-4">
           <div class="card-body">
               <a href="/transaksipeminjaman/create" class="btn mb-3 btn-primary btn-icon-split btn-sm">Tambah Data Peminjaman</a>
+              <a href="/datapeminjaman/printpdf" class="btn mb-3 btn-success btn-icon-split btn-sm">Print Data Peminjaman</a>
+
             <div class="table-responsive">
-              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0"  >
                 <thead>
                 <h5>Keterlambatan : Denda Rp 5000/hari</h5>
-                  <tr>
+                  <tr >
                     <th>Id Peminjaman</th>
                     <th>Nama Peminjam</th>
                     <th>Nama Buku</th>
@@ -42,7 +44,7 @@
                     <td class="text-capitalize">{{$pinjam->anggota->nama}}</td>
                     <td>{{$pinjam->buku->judul_buku}}</td>
                     <td>{{$pinjam->tanggal_pinjam}}</td>
-                    <td>{{$pinjam->lama_peminjaman}} Hari</td>
+                    <td >{{$pinjam->lama_peminjaman}} Hari</td>
                     <td>{{$pinjam->user->nama}}</td>
                     <td>@if($pinjam->status==1)
                         <span class="badge bg-warning text-dark">Dipinjam</span>

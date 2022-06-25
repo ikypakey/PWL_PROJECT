@@ -38,6 +38,7 @@ Route::get('/buku/printpdf', [DataBukuController::class, 'cetak_pdf']);
 Route::resource('/datakategori', DataKategoriController::class);
 Route::get('/kategori/printpdf', [DataKategoriController::class, 'cetak_pdf']);
 Route::resource('/transaksipeminjaman', PeminjamanController::class);
+Route::get('/datapeminjaman/printpdf', [PeminjamanController::class, 'cetak_pdf']);
 Route::get('/transaksipengembalian/{id}', [TransaksiController::class, 'pengembalian']);
 Route::resource('/pengembalian', PengembalianController::class);
 Route::resource('/laporan', LaporanController::class);
