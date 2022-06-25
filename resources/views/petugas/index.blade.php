@@ -14,13 +14,13 @@
     <div class="card shadow mb-4">
       <div class="card-body">
         <a href="/datapetugas/create" class="btn mb-3 btn-primary btn-icon-split btn-sm">Tambah Data Petugas</a>
-        <a href="/petugas/pdf" class="btn mb-3 btn-primary btn-icon-split btn-sm">Cetak PDF</a>
+        <a href="/petugas/pdf" class="btn mb-3 btn-success btn-icon-split btn-sm">Print Data Petugas</a>
       </a>
         <div class="table-responsive">
           <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
             <thead>
               <tr>
-                <th>No</th>
+                <th>Id</th>
                 <th>Foto</th>
                 <th>Nama Petugas</th>
                 <th>Email</th>
@@ -39,10 +39,10 @@
               <td>{{$user->email}}</td>
               <td>{{$user->tanggal_join}}</td>
               <td>
-                <a class="btn btn-primary" href="/datapetugas/{{$user->id}}/edit">Edit</a>
+                <a class="btn btn-primary" href="/datapetugas/{{$user->id}}/edit"><i class="bi bi-pencil-square"></i></a>
                 <form action="/datapetugas/{{$user->id}}" method="POST">@csrf
-                  @method('DELETE')
-                  <button type="submit" class="btn btn-danger">Delete</i></button></form>
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i></button></form>
               </td>
               </tr>
               @endforeach

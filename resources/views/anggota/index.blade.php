@@ -18,7 +18,7 @@
         <div class="card shadow mb-4">
           <div class="card-body">
                <a href="/dataanggota/create" class="btn mb-3 btn-primary btn-icon-split btn-sm">Tambah Data Anggota</a>
-               <a href="/anggota/pdf" class="btn mb-3 btn-primary btn-icon-split btn-sm">Cetak PDF</a>
+               <a href="/anggota/pdf" class="btn mb-3 btn-success btn-icon-split btn-sm">Print Data Anggota</a>
             <div class="table-responsive">
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
