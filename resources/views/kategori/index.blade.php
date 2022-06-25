@@ -19,7 +19,7 @@
         <div class="card shadow mb-4">
           <div class="card-body">
                <a href="/datakategori/create" class="btn mb-3 btn-primary btn-icon-split btn-sm">Tambah Data Kategori</a>
-               <a href="/kategori/printpdf" class="btn mb-3 btn-success btn-icon-split btn-sm">Print PDF</a>
+               <a href="/kategori/printpdf" class="btn mb-3 btn-success btn-icon-split btn-sm">Print Kategori Buku</a>
             <div class="table-responsive">
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
@@ -37,7 +37,7 @@
                   
                   @foreach ($data_kategoris as $kategori)
                   <tr>
-                    <td>{{$loop -> iteration}}</td>
+                    <td>{{$kategori -> id}}</td>
                     <td>{{$kategori->nama_kategori}}</td>
                     <td><img src="{{ asset('storage/'.$kategori -> image) }}" alt="" height="80px" width="80px" class="rounded"style="object-fit: cover"></td>
                     <td>{{$kategori->deskripsi}}</td>
@@ -45,7 +45,7 @@
                       <a class="btn btn-primary" href="/datakategori/{{$kategori->id}}/edit"><i class="bi bi-pencil-square"></i></a>
                       <form action="/datakategori/{{$kategori->id}}" method="POST">@csrf
                         @method('DELETE')
-                        <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i></button></form>
+                       <button onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data Ini? ')" class="btn btn-danger"><i class="bi bi-trash"></i></button></form>
                     </td>
                   </tr>
                   @endforeach
