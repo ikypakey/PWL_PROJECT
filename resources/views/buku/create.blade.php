@@ -22,7 +22,7 @@
                     <div class="form-group">
                         <label for="judul_buku">Judul Buku</label>
                         <input type="text" name="judul_buku" class="form-control" id="judul_buku" aria-describedby="judul_buku">
-                    </div>
+                    </div><br>
                     <div class="form-group">
                         <label for="image">Id Kategori</label>
                         <select class="form-select" name="kategoris_id">
@@ -30,30 +30,30 @@
                             <option value="{{ $kategori->id }}">{{ $kategori->id }}</option>
                             @endforeach
                           </select>
-                    </div>
+                    </div><br>
                     <div class="form-group">
                         <label for="book_image">Gambar Buku</label>
                         <input type="file" name="book_image" class="form-control" id="book_image"
                             ariadescribedby="book_image">
-                    </div>
+                    </div><br>
                     <div class="form-group">
                         <label for="nama_pengarang">Nama Pengarang</label>
                         <input type="text" name="nama_pengarang" class="form-control" id="nama_pengarang" aria-describedby="nama_pengarang">
-                    </div>
+                    </div><br>
                     <div class="form-group">
                         <label for="penerbit">Penerbit</label>
                         <input type="text" name="penerbit" class="form-control" id="penerbit" ariadescribedby="penerbit">
-                    </div>
+                    </div><br>
                     <div class="form-group">
                         <label for="tahun_terbit">Tahun Terbit</label>
                         <input type="text" name="tahun_terbit" class="form-control" id="tahun_terbit"
                             ariadescribedby="tahun_terbit">
-                    </div>
+                    </div><br>
                       <div class="form-group">
                         <label for="jumlah_halaman">Jumlah Halaman</label>
                         <input type="text" name="jumlah_halaman" class="form-control" id="jumlah_halaman"
                             ariadescribedby="jumlah_halaman">
-                    </div>
+                    </div><br>
                       <div class="form-group">
                         <label for="deskripsi">Diinput Oleh</label>
                         <select class="form-select" name="user_id">

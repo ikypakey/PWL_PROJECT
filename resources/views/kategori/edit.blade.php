@@ -25,19 +25,19 @@
                         <label for="nama">Nama Kategori</label>
                         <input type="text" name="nama_kategori" class="form-control" id="nama" value="{{$data_kategoris->nama_kategori}}"
                             aria-describedby="nama_kategori">
-                    </div>
+                    </div><br>
                 <div class="form-group">
                         <label for="image">Foto Kategori</label>
                         <input type="file" name="image" class="form-control" id="image" aria-describedby="image">
                             <value="{{ $data_kategoris -> image }}">
                         <img width="150px" src="{{asset('storage/'.$data_kategoris -> image)}}"
                             alt="{{$data_kategoris->image}}">
-                    </div>    
+                    </div><br>    
                 <div class="form-group">
                         <label for="deskripsi">Deskripsi</label>
                         <input type="text" name="deskripsi" class="form-control" id="deskripsi" value="{{$data_kategoris->deskripsi}}"
                             aria-describedby="deskripsi">
-                    </div>
+                    </div><br>
             <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>

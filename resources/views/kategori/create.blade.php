@@ -21,11 +21,11 @@
                     <div class="form-group">
                         <label for="nama">Nama Kategori</label>
                         <input type="text" name="nama_kategori" class="form-control" id="nama" aria-describedby="nama">
-                    </div>
+                    </div><br>
                     <div class="form-group">
                         <label for="image">Foto Kategori</label>
                         <input type="file" name="image" class="form-control" id="image" ariadescribedby="image">
-                    </div>
+                    </div><br>
                     <div class="form-group">
                         <label for="deskripsi">Deskripsi</label>
                         <input type="text" name="deskripsi" class="form-control" id="deskripsi"

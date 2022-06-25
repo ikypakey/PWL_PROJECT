@@ -19,7 +19,7 @@
         <div class="card shadow mb-4">
           <div class="card-body">
               <a href="/databuku/create" class="btn mb-3 btn-primary btn-icon-split btn-sm">Tambah Data Buku</a>
-              <a href="/buku/printpdf" class="btn mb-3 btn-success btn-icon-split btn-sm">Cetak PDF</a>
+              <a href="/buku/printpdf" class="btn mb-3 btn-success btn-icon-split btn-sm">Print Data Buku</a>
             <div class="table-responsive">
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
@@ -55,7 +55,7 @@
                       <a class="btn btn-primary" href="/databuku/{{$buku->id}}/edit"><i class="bi bi-pencil-square"></i></a>
                       <form action="/databuku/{{$buku->id}}" method="POST">@csrf
                         @method('DELETE')
-                        <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i></button></form>
+                       <button onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data Ini? ')" class="btn btn-danger"><i class="bi bi-trash"></i></button></form>
                     </td>
                   </tr>
                   @endforeach
