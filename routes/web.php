@@ -41,6 +41,7 @@ Route::resource('/transaksipeminjaman', PeminjamanController::class);
 Route::get('/datapeminjaman/printpdf', [PeminjamanController::class, 'cetak_pdf']);
 Route::get('/transaksipengembalian/{id}', [TransaksiController::class, 'pengembalian']);
 Route::resource('/pengembalian', PengembalianController::class);
+Route::get('/datapengembalian/printpdf', [PengembalianController::class, 'cetak_pdf']);
 Route::resource('/laporan', LaporanController::class);
 
 

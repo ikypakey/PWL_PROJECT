@@ -10,6 +10,7 @@ use App\Models\Pengembalian;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class PengembalianController extends Controller
 {
@@ -44,6 +45,11 @@ class PengembalianController extends Controller
      */
     public function store(Request $request)
     {
+        $tes=$request->validate([
+            'peminjaman_id' => 'required',
+            'tanggal_kembali' => 'required',
+            ]);
+
         $peminjaman=Peminjaman::where('id', $request->peminjaman_id)->first();
         $lamasewa=$peminjaman->lama_peminjaman*24;
         $tenggang=date('Y-m-d', strtotime($peminjaman->tanggal_pinjam.'+'.$lamasewa.'hours'));
@@ -64,7 +70,7 @@ class PengembalianController extends Controller
             $pengembalian->save();
         }
         $peminjaman->status=2;
-        $peminjaman->update();
+        $peminjaman->update($tes);
         return redirect('/pengembalian');
     }
 
@@ -112,5 +118,11 @@ class PengembalianController extends Controller
     {
         Pengembalian::destroy($pengembalian->id);
         return redirect('/pengembalian')->with('toast_success', 'Pengembalian Berhasil Dihapus!');
+    }
+
+     public function cetak_pdf(){
+        $articles = Pengembalian::all();
+        $pdf = PDF::loadview('pengembalian.printpdf',['pengembalians'=>$articles]);
+        return $pdf->stream();
     }
 }

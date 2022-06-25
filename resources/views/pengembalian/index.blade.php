@@ -19,7 +19,7 @@
         <div class="card shadow mb-4">
           <div class="card-body">
               <button type="button" class="btn mb-3 btn-primary btn-icon-split btn-sm"data-bs-toggle="modal" data-bs-target="#standard-modal">Tambah Data Pengembalian</button>
-              <a href="" class="btn mb-3 btn-success btn-icon-split btn-sm">Print Data Pengembalian</a>
+              <a href="/datapengembalian/printpdf" class="btn mb-3 btn-success btn-icon-split btn-sm">Print Data Pengembalian</a>
             <div class="table-responsive">
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead style="background-color:#7ce4f3;">
@@ -45,7 +45,7 @@
                     <td>{{$kembali->tanggal_kembali}}</td>
                     <td>{{$kembali->peminjaman->user->nama}}</td>
                     <td>@if($kembali->peminjaman->status==1)
-                        <span class="badge bg-warning text-dark">Dikembali</span>
+                        <span class="badge bg-warning text-dark">Dipinjam</span>
                         @else
                         <span class="badge bg-success">Dikembalikan</span>
                         @endif
