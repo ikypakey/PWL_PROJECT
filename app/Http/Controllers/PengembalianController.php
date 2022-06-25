@@ -21,7 +21,8 @@ class PengembalianController extends Controller
     public function index()
     {
         return view('pengembalian.index',[
-            'pengembalians'=> Pengembalian::all()
+            'pengembalians'=> Pengembalian::all(),
+            'peminjaman' => Peminjaman::all()
         ]);
     }
 
