@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\DataAnggotaController;
 use App\Http\Controllers\DataBukuController;
 use App\Http\Controllers\DataKategoriController;
+use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\PeminjamanController;
 use App\Http\Controllers\PengembalianController;
 use App\Http\Controllers\PengembalianController1;
@@ -39,6 +40,7 @@ Route::get('/kategori/printpdf', [DataKategoriController::class, 'cetak_pdf']);
 Route::resource('/transaksipeminjaman', PeminjamanController::class);
 Route::get('/transaksipengembalian/{id}', [TransaksiController::class, 'pengembalian']);
 Route::resource('/pengembalian', PengembalianController::class);
+Route::resource('/laporan', LaporanController::class);
 
 
 Auth::routes();
