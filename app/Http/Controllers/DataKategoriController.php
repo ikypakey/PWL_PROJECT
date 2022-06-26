@@ -6,6 +6,7 @@ use App\Models\DataKategori;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Barryvdh\DomPDF\Facade\Pdf;
+use Illuminate\Support\Facades\DB;
 
 class DataKategoriController extends Controller
 {
@@ -16,8 +17,19 @@ class DataKategoriController extends Controller
      */
     public function index()
     {
-         return view('kategori.index',[
-            'data_kategoris'=> DataKategori::all()
+        //FUNGSI ELOQUENT MENAMPILKAN DATA MENGGUNAKAN PAGINATION
+        $kategori=$kategori = DB::table('data_kategoris')->get();
+
+        //MENGGAMBIL SEMUA ISI TABEL
+        $post=DataKategori::latest();
+
+        //ADD PAGINATION
+        return view('kategori.index',[
+            'data_kategoris'=> $kategori,
+
+            //FUNGSI LATEST UNTUK MENAMPILKAN BERDASARKAN DATA PALING AKHIR DI INPUT
+            'post'=>DataKategori::latest()->paginate(4)
+
         ]);
     }
 

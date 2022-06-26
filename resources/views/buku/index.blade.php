@@ -39,7 +39,7 @@
                 </thead>
                 <tbody>
                   
-                  @foreach ($data_bukus as $buku)
+                  @foreach ($post as $buku)
                   <tr>
                     <td>{{$buku -> id}}</td>
                     <td class="text-capitalize">{{$buku->judul_buku}}</td>
@@ -63,6 +63,9 @@
               </table>
             </div>
           </div>
+        </div>
+        <div class="d-flex justify-content-center">
+            {{$post -> links()}}
         </div>
       </div>
       <!-- /.container-fluid -->

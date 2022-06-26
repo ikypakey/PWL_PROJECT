@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Barryvdh\DomPDF\Facade\Pdf;
+use Illuminate\Support\Facades\DB;
 
 class DataBukuController extends Controller
 {
@@ -18,8 +19,16 @@ class DataBukuController extends Controller
      */
     public function index()
     {
-         return view('buku.index',[
-            'data_bukus'=> DataBuku::all()
+        $buku=$buku = DB::table('data_bukus')->get();
+
+        $post=DataBuku::latest();
+
+
+        return view('buku.index',[
+            'data_bukus'=> $buku,
+
+            'post'=>DataBuku::latest()->paginate(4)
+
         ]);
     }
 

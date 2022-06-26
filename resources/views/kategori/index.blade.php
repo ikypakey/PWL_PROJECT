@@ -35,7 +35,7 @@
                 </thead>
                 <tbody>
                   
-                  @foreach ($data_kategoris as $kategori)
+                  @foreach ($post as $kategori)
                   <tr>
                     <td>{{$kategori -> id}}</td>
                     <td>{{$kategori->nama_kategori}}</td>
@@ -53,6 +53,9 @@
               </table>
             </div>
           </div>
+        </div>
+        <div class="d-flex justify-content-center">
+            {{$post->links()}}
         </div>
       </div>
       <!-- /.container-fluid -->
