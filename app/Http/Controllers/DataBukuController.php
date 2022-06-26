@@ -132,7 +132,7 @@ class DataBukuController extends Controller
         }
 
         DataBuku::where('id', $id)->update($validateData);
-        return redirect('/databuku')->with('toast_success', 'Buku Berhasil Diedit!');
+        return redirect('/databuku')->with('success', 'Buku Berhasil Diedit!');
     }
 
     /**
@@ -144,7 +144,7 @@ class DataBukuController extends Controller
     public function destroy($id)
     {
         DataBuku::destroy($id);
-        return redirect('/databuku')->with('toast_success', 'Buku Berhasil Dihapus!');
+        return redirect('/databuku')->with('success', 'Buku Berhasil Dihapus!');
     }
     
     public function cetak_pdf(){

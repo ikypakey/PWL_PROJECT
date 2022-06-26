@@ -22,7 +22,7 @@ class DataBukuSeeder extends Seeder
                 'penerbit'=>'CV. Anugerah Rajarjo',
                 'tahun_terbit'=>' 2016 ',
                 'jumlah_halaman'=>' 200 ',
-                'user_id'=>' 2 ',
+                'user_id'=> 2 ,
                 
 
             ],
@@ -46,6 +46,45 @@ class DataBukuSeeder extends Seeder
                 'penerbit'=>'CV. Anugerah Rajarjo',
                 'tahun_terbit'=>' 2016 ',
                 'jumlah_halaman'=>' 200 ',
+                'user_id'=>3
+
+                
+
+            ],
+            [
+                'judul_buku'=>'One Piece Vol 345',
+                'kategoris_id'=>1,
+                'book_image'=>'',
+                'nama_pengarang'=>' Eichiro Oda',
+                'penerbit'=>'Weeboo Jaya Sentosa',
+                'tahun_terbit'=>' 2015 ',
+                'jumlah_halaman'=>' 240 ',
+                'user_id'=>1
+
+                
+
+            ],
+            [
+                'judul_buku'=>'One Piece Vol 115',
+                'kategoris_id'=>1,
+                'book_image'=>'',
+                'nama_pengarang'=>'  Eichiro Oda',
+                'penerbit'=>'Weeboo Jaya Sentosa',
+                'tahun_terbit'=>' 2015 ',
+                'jumlah_halaman'=>' 220 ',
+                'user_id'=>2
+
+                
+
+            ],
+              [
+                'judul_buku'=>'One Piece Vol 215',
+                'kategoris_id'=>1,
+                'book_image'=>'',
+                'nama_pengarang'=>'  Eichiro Oda',
+                'penerbit'=>'CV. Weeboo Jaya Sentosa',
+                'tahun_terbit'=>' 2015 ',
+                'jumlah_halaman'=>' 120 ',
                 'user_id'=>3
 
                 
