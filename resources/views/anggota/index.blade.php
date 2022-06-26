@@ -20,7 +20,7 @@
                <a href="/dataanggota/create" class="btn mb-3 btn-primary btn-icon-split btn-sm">Tambah Data Anggota</a>
                <a href="/anggota/pdf" class="btn mb-3 btn-success btn-icon-split btn-sm">Print Data Anggota</a>
             <div class="table-responsive">
-              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+              <table class="table table-bordered" style="text-align:center;" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                   <tr>
                     <th>Id</th>
@@ -51,7 +51,7 @@
                     <td>{{$anggota->jeniskelamin}}</td>
                     <td>{{$anggota->notelp}}</td>
                     <td>{{$anggota->tanggallahir}}</td>
-                    <td>
+                    <td style="text-align:left;">
                         <a class="btn btn-info" href="/dataanggota/{{$anggota->id}}"><i class="bi bi-eye"></i></a>
                       <a class="btn btn-primary" href="/dataanggota/{{$anggota->id}}/edit"><i class="bi bi-pencil-square"></i></a>
                       <form action="/dataanggota/{{$anggota->id}}" method="POST">@csrf
