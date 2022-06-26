@@ -1,4 +1,5 @@
 @extends('layout.main')
+@section('title'){{'Data Anggota'}} @endsection
 @section('content')                      
     <!-- Begin Page Content -->
     <div class="container-fluid">

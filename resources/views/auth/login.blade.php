@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title'){{'Login - Sipus'}} @endsection
+
 @section('content')
 <div class="loading authentication-bg"
         data-layout-config='{"leftSideBarTheme":"dark","layoutBoxed":false, "leftSidebarCondensed":false, "leftSidebarScrollable":false,"darkMode":false, "showRightSidebarOnStart": true}'>
@@ -32,9 +34,9 @@
                                         placeholder="Enter your email" name="email" value="{{ old('email') }}" required
                                         autocomplete="email" autofocus>
                                     @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                    <a class="alert alert-danger" role="alert">
+                                        <strong>Email/Password Yang Anda Masukkan Salah!</strong>
+                                    </a>
                                     @enderror
                                 </div>
 
@@ -47,8 +49,8 @@
                                             <span class="password-eye"></span>
                                         </div>
                                         @error ('password')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
+                                        <span class="alert alert-danger" role="alert">
+                                            <strong>Password Yang Anda Masukkan Salah!</strong>
                                         </span>
                                         @enderror
                                     </div>

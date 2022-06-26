@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Request;
 
 class LoginController extends Controller
 {
@@ -33,6 +34,16 @@ class LoginController extends Controller
      *
      * @return void
      */
+    public function authenticate(Request $request){
+        $request->validate([
+            'email' => 'required',
+            'password' => 'required'
+        ],[
+            'email.required' => 'Email Harus Di Isi!',
+            'password.required' => 'Password Harus Di Isi!'
+        ]);
+    }
+
     public function __construct()
     {
         $this->middleware('guest')->except('logout');

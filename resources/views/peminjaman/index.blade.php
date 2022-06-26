@@ -1,5 +1,5 @@
 @extends('layout.main')
-
+@section('title'){{'Transaksi Peminjaman'}} @endsection
 @section('content')                      
     <!-- Begin Page Content -->
     <div class="container-fluid">

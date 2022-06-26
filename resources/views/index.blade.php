@@ -1,5 +1,5 @@
 ﻿@extends('layout.main')
-
+@section('title'){{'Dashboard - Sipus'}} @endsection
 @section('content')
 <!-- Begin Page Content -->
 <div class="container-fluid">

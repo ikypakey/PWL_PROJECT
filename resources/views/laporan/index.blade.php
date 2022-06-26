@@ -1,4 +1,5 @@
 @extends('layout.main')
+@section('title'){{'Laporan'}} @endsection
 @section('content')                      
     <!-- Begin Page Content -->
     <div class="container-fluid">
@@ -31,7 +32,7 @@
                             <input style="margin-top:21px;" class="btn btn-primary" type="submit" value="SEARCH">
                         </div>
                         <div class="col-lg-3">
-                            <input style="margin-left: 80px; margin-top:21px;"  class="btn btn-success" type="submit" value="Print Data Laporan">
+                            {{-- <input style="margin-left: 80px; margin-top:21px;"  class="btn btn-success" type="submit" value="Print Data Laporan"> --}}
                         </div>
                     </div>
                </form>
