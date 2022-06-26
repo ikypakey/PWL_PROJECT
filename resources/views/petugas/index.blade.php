@@ -17,7 +17,7 @@
         <a href="/petugas/pdf" class="btn mb-3 btn-success btn-icon-split btn-sm">Print Data Petugas</a>
       </a>
         <div class="table-responsive">
-          <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+          <table class="table table-bordered" style="text-align:center;" id="dataTable" width="100%" cellspacing="0">
             <thead>
               <tr>
                 <th>Id</th>
@@ -38,7 +38,7 @@
               <td class="text-capitalize">{{$user->nama}}</td>
               <td>{{$user->email}}</td>
               <td>{{$user->tanggal_join}}</td>
-              <td>
+              <td style="text-align:left;">
                 <a class="btn btn-primary" href="/datapetugas/{{$user->id}}/edit"><i class="bi bi-pencil-square"></i></a>
                 <form action="/datapetugas/{{$user->id}}" method="POST">@csrf
                         @method('DELETE')
