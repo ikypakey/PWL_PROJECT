@@ -118,7 +118,7 @@ class DataKategoriController extends Controller
         }
 
         DataKategori::where('id', $id)->update($validateData);
-        return redirect('/datakategori')->with('toast_success', 'Kategori Berhasil Diedit!');
+        return redirect('/datakategori')->with('success', 'Kategori Berhasil Diedit!');
 
 
     }
@@ -132,7 +132,7 @@ class DataKategoriController extends Controller
     public function destroy($id)
     {
         DataKategori::destroy($id);
-        return redirect('/datakategori')->with('toast_success', 'Kategori Buku Berhasil Dihapus!');
+        return redirect('/datakategori')->with('success', 'Kategori Buku Berhasil Dihapus!');
     
     }
     

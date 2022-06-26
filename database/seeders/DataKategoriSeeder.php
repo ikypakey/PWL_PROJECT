@@ -31,7 +31,17 @@ class DataKategoriSeeder extends Seeder
                 'nama_kategori'=>'Cergam',
                 'image'=>'',
                 'deskripsi'=>'Jenis buku yang menggunakan gambar-gambar tidak bergerak yang disusun sedemikian rupa sehingga membentuk jalinan cerita',
-            ]
+            ],
+               [
+                'nama_kategori'=>'Ensiklopedi',
+                'image'=>'',
+                'deskripsi'=>'Jenis buku yang menghimpun keterangan atau uraian tentang berbagai hal dalam bidang seni dan ilmu pengetahuan, yang disusun secara abjad.',
+            ],
+               [
+                'nama_kategori'=>'Dongeng',
+                'image'=>'',
+                'deskripsi'=>'Jenis buku yang mengandung cerita luar biasa dan imajiner (fiksi) yang dianggap masyarakat umum sebagai cerita yang tidak benar-benar terjadi',
+            ],
             ]);
     }
 }

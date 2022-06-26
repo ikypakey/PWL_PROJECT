@@ -59,5 +59,6 @@
         </div>
       </div>
       <!-- /.container-fluid -->
-</div>       
+</div>      
+@include('sweetalert::alert')  
 @endsection
