@@ -22,8 +22,8 @@
               <a href="/datapeminjaman/printpdf" class="btn mb-3 btn-success btn-icon-split btn-sm">Print Data Peminjaman</a>
 
             <div class="table-responsive">
-              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0"  >
-                <thead>
+              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" style="text-align:center;"  >
+                <thead style="background-color:#7ce4f3;">
                 <h5>Keterlambatan : Denda Rp 5000/hari</h5>
                   <tr >
                     <th>Id Peminjaman</th>
