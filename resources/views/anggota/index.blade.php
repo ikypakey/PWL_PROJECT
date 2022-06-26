@@ -56,7 +56,7 @@
                       <a class="btn btn-primary" href="/dataanggota/{{$anggota->id}}/edit"><i class="bi bi-pencil-square"></i></a>
                       <form action="/dataanggota/{{$anggota->id}}" method="POST">@csrf
                         @method('DELETE')
-                        <button type="submit" class="btn btn-danger delete"><i class="bi bi-trash"></i></button></form>
+                        <button onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data Ini? ')" class="btn btn-danger"><i class="bi bi-trash"></i></button></form>
                     </td>
                   </tr>
                   @endforeach
@@ -70,5 +70,6 @@
       </div>
     </div>
     <!-- /.container-fluid -->
-</div>     
+</div>
+@include('sweetalert::alert')     
 @endsection

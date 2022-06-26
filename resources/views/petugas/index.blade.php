@@ -42,7 +42,7 @@
                 <a class="btn btn-primary" href="/datapetugas/{{$user->id}}/edit"><i class="bi bi-pencil-square"></i></a>
                 <form action="/datapetugas/{{$user->id}}" method="POST">@csrf
                         @method('DELETE')
-                        <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i></button></form>
+                        <button onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data Ini? ')" class="btn btn-danger"><i class="bi bi-trash"></i></button></form>
               </td>
               </tr>
               @endforeach
@@ -58,5 +58,6 @@
   <!-- /.container-fluid -->
 
 </div>
+@include('sweetalert::alert') 
 <!-- End of Main Content -->
 @endsection

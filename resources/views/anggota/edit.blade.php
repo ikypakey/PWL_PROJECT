@@ -28,34 +28,34 @@
                             value="{{ $data_anggotas -> image }}">
                         <img width="150px" src="{{asset('storage/'.$data_anggotas -> image)}}"
                             alt="{{ $data_anggotas -> image }}">
-                    </div>
+                    </div><br>
                     <div class="form-group">
                         <label for="Nama">Nama</label>
                         <input type="text" name="nama" class="form-control" id="Nama" value="{{ $data_anggotas->nama }}"
                             aria-describedby="Nama">
-                    </div>
+                    </div><br>
                     <div class="form-group">
                         <label for="alamat">Alamat</label>
                         <input type="text" name="alamat" class="form-control" id="alamat" value="{{ $data_anggotas->alamat }}"
                             aria-describedby="alamat">
-                    </div>
+                    </div><br>
                     <div class="form-group">
                         <label for="jeniskelamin">Jenis Kelamin</label>
                         <select class="form-select" aria-label="Default select example" name="jeniskelamin">
                             <option selected value="Perempuan">Perempuan</option>
                             <option value="Laki-Laki">Laki-Laki</option>
                           </select>
-                    </div>
+                    </div><br>
                     <div class="form-group">
                         <label for="notelp">No Telepon</label>
                         <input type="text" name="notelp" class="form-control" id="notelp" value="{{ $data_anggotas->notelp }}"
                             aria-describedby="Notelp">
-                    </div>
+                    </div><br>
                     <div class="form-group">
                         <label for="tanggallahir">Tanggal Lahir</label>
                         <input type="date" name="tanggallahir" class="form-control" id="tanggallahir" value="{{ $data_anggotas->tanggallahir }}"
                             aria-describedby="Tanggallahir">
-                    </div>
+                    </div><br>
                     
             <button type="submit" class="btn btn-primary">Submit</button>
             </form>

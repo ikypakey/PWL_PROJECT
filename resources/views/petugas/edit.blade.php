@@ -28,29 +28,29 @@
                             value="{{ $users -> foto }}">
                         <img width="150px" src="{{asset('storage/'.$users -> foto)}}"
                             alt="{{ $users -> foto }}">
-                    </div>
+                    </div><br>
                     <div class="form-group">
                         <label for="Nama">Nama Petugas</label>
                         <input type="text" name="nama" class="form-control" id="Nama" value="{{ $users->nama }}"
                             aria-describedby="Nama">
-                    </div>
+                    </div><br>
                     <div class="form-group">
                         <label for="email">Email</label>
                         <input type="text" name="email" class="form-control" id="email" value="{{ $users->email }}"
                             aria-describedby="email">
-                    </div>
+                    </div><br>
                     <div class="form-group">
                         <label for="password">Password</label>
                         <input type="password" name="password" class="form-control" id="password" value="{{ $users->password }}"
                             aria-describedby="password">
-                    </div>
+                    </div><br>
                     <div class="form-group">
                         <label for="level">Level</label>
                         <select class="form-select" aria-label="Default select example" name="level">
                             <option selected value="petugas">Petugas</option>
                             <option value="admin">Admin</option>
                           </select>
-                    </div>
+                    </div><br>
                     <div class="form-group">
                         <div class="form-group">
                         <label for="tanggal_join">Tanggal Join</label>

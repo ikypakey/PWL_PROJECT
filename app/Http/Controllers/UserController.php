@@ -121,7 +121,7 @@ class UserController extends Controller
         User::where('id', $id)->update($validatedata);
 
 
-        return redirect('/datapetugas')->with('toast_success', 'Petugas berhasil di edit!');
+        return redirect('/datapetugas')->with('success', 'Petugas berhasil di edit!');
     }
 
     /**
@@ -133,7 +133,7 @@ class UserController extends Controller
     public function destroy($id)
     {
         User::destroy($id);
-        return redirect('/datapetugas')->with('toast_success', 'Petugas berhasil di hapus!');
+        return redirect('/datapetugas')->with('success', 'Petugas berhasil di hapus!');
     }
 
     public function cetak_pdf(){

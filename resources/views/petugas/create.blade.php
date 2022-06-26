@@ -21,26 +21,26 @@
                     <div class="form-group">
                         <label for="foto">Foto</label>
                         <input type="file" name="foto" class="form-control" id="foto" aria-describedby="foto">
-                    </div>
+                    </div><br>
                     <div class="form-group">
                         <label for="Nama">Nama Petugas</label>
                         <input type="text" name="nama" class="form-control" id="Nama" ariadescribedby="Nama">
-                    </div>
+                    </div><br>
                     <div class="form-group">
                         <label for="email">Email</label>
                         <input type="text" name="email" class="form-control" id="email" ariadescribedby="email">
-                    </div>
+                    </div><br>
                     <div class="form-group">
                         <label for="password">Password</label>
                         <input type="password" name="password" class="form-control" id="password" ariadescribedby="password">
-                    </div>
+                    </div><br>
                     <div class="form-group">
                         <label for="level">Level</label>
                         <select class="form-select" aria-label="Default select example" name="level">
                             <option selected value="petugas">Petugas</option>
                             <option value="admin">Admin</option>
                           </select>
-                    </div>
+                    </div><br>
                     <div class="form-group">
                         <label for="tanggal_join">Tanggal Join</label>
                         <input type="date" name="tanggal_join" class="form-control" id="tanggal_join" ariadescribedby="tanggal_join">

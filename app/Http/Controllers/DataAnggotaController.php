@@ -62,7 +62,7 @@ class DataAnggotaController extends Controller
             }
             DataAnggota::create($cek);
             return redirect('/dataanggota')
-            ->with('success', 'Anggota Berhasil Ditambahkan'); 
+            ->with('success', 'Anggota berhasil di tambahkan!');
     }
 
     /**
@@ -122,7 +122,7 @@ class DataAnggotaController extends Controller
         DataAnggota::where('id', $id)->update($validatedata);
 
 
-        return redirect('/dataanggota')->with('toast_success', 'Anggota berhasil di edit!');
+        return redirect('/dataanggota')->with('success', 'Anggota berhasil di edit!');
     }
 
     /**
@@ -134,7 +134,7 @@ class DataAnggotaController extends Controller
     public function destroy($id)
     {
         DataAnggota::destroy($id);
-        return redirect('/dataanggota')->with('toast_success', 'Anggota berhasil di hapus!');
+        return redirect('/dataanggota')->with('success', 'Anggota berhasil di hapus!');
     }
 
     public function cetak_pdf(){
