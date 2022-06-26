@@ -15,7 +15,7 @@
  	</center>
 	<h6>Tanggal : <?php $tgl=date('d - m - Y');
 		echo $tgl; ?></h6> 
- 	<table class="table table-bordered 2px">
+ 	<table class="table table-bordered 2px" style="text-align:center;">
  	 	<thead> 
  	 	 	<tr> 
  	 	 	 	<th>Id Pengembalian</th> 

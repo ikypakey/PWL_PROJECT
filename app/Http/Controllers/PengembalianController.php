@@ -71,7 +71,7 @@ class PengembalianController extends Controller
         }
         $peminjaman->status=2;
         $peminjaman->update($tes);
-        return redirect('/pengembalian');
+        return redirect('/pengembalian')->with('success', 'Pengembalian Berhasil Di Tambah!');;
     }
 
     /**
@@ -117,7 +117,7 @@ class PengembalianController extends Controller
     public function destroy(Pengembalian $pengembalian)
     {
         Pengembalian::destroy($pengembalian->id);
-        return redirect('/pengembalian')->with('toast_success', 'Pengembalian Berhasil Dihapus!');
+        return redirect('/pengembalian')->with('success', 'Pengembalian Berhasil Dihapus!');
     }
 
      public function cetak_pdf(){

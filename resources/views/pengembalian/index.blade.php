@@ -21,7 +21,7 @@
               <button type="button" class="btn mb-3 btn-primary btn-icon-split btn-sm"data-bs-toggle="modal" data-bs-target="#standard-modal">Tambah Data Pengembalian</button>
               <a href="/datapengembalian/printpdf" class="btn mb-3 btn-success btn-icon-split btn-sm">Print Data Pengembalian</a>
             <div class="table-responsive">
-              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" style="text-align:center;">
                 <thead style="background-color:#7ce4f3;">
                   <tr>
                     <th>Id Pengembalian</th>
@@ -109,5 +109,5 @@
       </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
-     
+@include('sweetalert::alert') 
 @endsection
