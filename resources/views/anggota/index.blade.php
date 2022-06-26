@@ -36,9 +36,9 @@
                 </thead>
                 <tbody>
                   
-                  @foreach ($data_anggotas as $anggota)
+                  @foreach ($post as $anggota)
                   <tr>
-                    <td>{{$loop -> iteration}}</td>
+                    <td>{{$anggota->id}}</td>
                     <td><img src="
                     @if($anggota -> jeniskelamin == 'Perempuan')
                       {{asset('image/student-female.png')}}
@@ -56,7 +56,7 @@
                       <a class="btn btn-primary" href="/dataanggota/{{$anggota->id}}/edit"><i class="bi bi-pencil-square"></i></a>
                       <form action="/dataanggota/{{$anggota->id}}" method="POST">@csrf
                         @method('DELETE')
-                        <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i></button></form>
+                        <button type="submit" class="btn btn-danger delete"><i class="bi bi-trash"></i></button></form>
                     </td>
                   </tr>
                   @endforeach
@@ -65,7 +65,10 @@
             </div>
           </div>
         </div>
+        <div class="d-flex justify-content-center">
+          {{$post -> links()}}
+      </div>
     </div>
     <!-- /.container-fluid -->
-</div>       
+</div>     
 @endsection

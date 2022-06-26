@@ -30,9 +30,9 @@
             </thead>
             <tbody>
              
-              @foreach ($users as $user)
+              @foreach ($post as $user)
               <tr>
-              <td>{{$loop -> iteration}}</td>
+              <td>{{$user->id}}</td>
               <td><img src="{{ asset('storage/'.$user -> foto) }}" alt="" height="50px" width="50px" class="rounded"
                 style="object-fit: cover"></td>
               <td class="text-capitalize">{{$user->nama}}</td>
@@ -51,7 +51,9 @@
         </div>
       </div>
     </div>
-
+    <div class="d-flex justify-content-center">
+      {{$post -> links()}}
+  </div>
   </div>
   <!-- /.container-fluid -->
 

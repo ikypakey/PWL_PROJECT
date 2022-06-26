@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\DataAnggota;
 use Barryvdh\DomPDF\Facade\Pdf;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
@@ -17,8 +18,14 @@ class DataAnggotaController extends Controller
      */
     public function index()
     {
+        $anggota=$anggota = DB::table('data_anggotas')->get();
+
+        $post=DataAnggota::latest();
+
         return view('anggota.index',[
-            'data_anggotas'=> DataAnggota::all()
+            'data_anggotas'=> $anggota,
+
+            'post'=>DataAnggota::latest()->paginate(4)
         ]);
     }
 

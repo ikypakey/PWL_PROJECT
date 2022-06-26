@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Barryvdh\DomPDF\Facade\Pdf;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
@@ -17,8 +18,12 @@ class UserController extends Controller
      */
     public function index()
     {
+        $petugas=$petugas = DB::table('users')->get();
+
+        $post=User::latest();
         return view('petugas.index',[
-            'users'=> User::all()
+            'users'=> $petugas,
+            'post'=>User::latest()->paginate(4)
         ]);
     }
 
