@@ -112,7 +112,7 @@ class PeminjamanController extends Controller
 
         $validateData = $request->validate($rules);
         Peminjaman::where('id',  $id)->update($validateData);
-        return redirect('/transaksipeminjaman')->with('toast_success', 'Peminjaman Berhasil Diedit!');
+        return redirect('/transaksipeminjaman')->with('success', 'Peminjaman Berhasil Diedit!');
     }
 
     /**
@@ -124,7 +124,7 @@ class PeminjamanController extends Controller
     public function destroy(Peminjaman $peminjaman,$id)
     {
         Peminjaman::destroy($id);
-        return redirect('/transaksipeminjaman')->with('toast_success', 'Peminjaman Berhasil Dihapus!');
+        return redirect('/transaksipeminjaman')->with('success', 'Peminjaman Berhasil Dihapus!');
     }
        public function cetak_pdf(){
         $articles = Peminjaman::all();
