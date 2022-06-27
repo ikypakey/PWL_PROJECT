@@ -53,6 +53,7 @@
                     </div>
                     <br>                    
                     <button type="submit" class="btn btn-primary">Submit</button>
+                    <a class="btn btn-success " href="/transaksipeminjaman">Kembali</a>
                 </form>
             </div>
         </div>

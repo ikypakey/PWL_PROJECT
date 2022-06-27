@@ -25,7 +25,7 @@
                         <label for="anggotas_id">Nama Peminjam</label>
                         <select class="form-select" name="anggotas_id">
                          @foreach ($data_anggotas as $anggota)
-                         <option value="{{ $anggota->id }}" >
+                         <option value="{{ $anggota->id }}" @if($anggota->id==$peminjamans->anggotas_id) selected @endif>
                          {{ $anggota->nama }} </option>
                          @endforeach
                          </select>
@@ -55,6 +55,7 @@
                          <input type="text" name="user_id" class="form-control" value="{{$peminjamans->user->nama}}" readonly>
                     </div><br>                    
             <button type="submit" class="btn btn-primary">Submit</button>
+            <a class="btn btn-success " href="/transaksipeminjaman">Kembali</a>
             </form>
         </div>
     </div>

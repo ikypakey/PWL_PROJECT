@@ -47,8 +47,9 @@
                     <div class="form-group">
                         <label for="level">Level</label>
                         <select class="form-select" aria-label="Default select example" name="level">
-                            <option selected value="petugas">Petugas</option>
-                            <option value="admin">Admin</option>
+                            <option selected >Option</option>
+                            <option value="Admin">Admin</option>
+                            <option value="Petugas">Petugas</option>
                           </select>
                     </div><br>
                     <div class="form-group">
@@ -59,6 +60,7 @@
                     </div>
                     
             <button type="submit" class="btn btn-primary">Submit</button>
+            <a class="btn btn-success " href="/datapetugas">Kembali</a>
             </form>
         </div>
     </div>

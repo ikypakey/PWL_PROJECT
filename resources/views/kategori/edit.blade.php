@@ -39,6 +39,7 @@
                             aria-describedby="deskripsi">
                     </div><br>
             <button type="submit" class="btn btn-primary">Submit</button>
+            <a class="btn btn-success " href="/datakategori">Kembali</a>
             </form>
         </div>
     </div>

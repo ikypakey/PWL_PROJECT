@@ -64,6 +64,7 @@
                     </div>
                     <br>                    
                     <button type="submit" class="btn btn-primary">Submit</button>
+                    <a class="btn btn-success " href="/databuku">Kembali</a>
                 </form>
             </div>
         </div>

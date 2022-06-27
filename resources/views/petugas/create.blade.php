@@ -46,6 +46,7 @@
                         <input type="date" name="tanggal_join" class="form-control" id="tanggal_join" ariadescribedby="tanggal_join">
                     </div><br>
                     <button type="submit" class="btn btn-primary">Submit</button>
+                    <a class="btn btn-success " href="/datapetugas">Kembali</a>
                 </form>
             </div>
         </div>

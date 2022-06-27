@@ -44,7 +44,7 @@
                         @endif
                     </td>
                     <td>@if($pdf->denda)
-                        Rp. {{number_format($kembali->denda)}}
+                        Rp. {{number_format($pdf->denda)}}
                         @else
                         -
                         @endif</td>
