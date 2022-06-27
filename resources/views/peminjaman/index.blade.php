@@ -43,7 +43,7 @@
                     <td>{{$pinjam->id}}</td>
                     <td class="text-capitalize">{{$pinjam->anggota->nama}}</td>
                     <td>{{$pinjam->buku->judul_buku}}</td>
-                    <td>{{$pinjam->tanggal_pinjam}}</td>
+                    <td>{{date('d F Y', strtotime($pinjam->tanggal_pinjam))}}</td>
                     <td >{{$pinjam->lama_peminjaman}} Hari</td>
                     <td>{{$pinjam->user->nama}}</td>
                     <td>@if($pinjam->status==1)

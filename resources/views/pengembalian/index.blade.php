@@ -41,8 +41,8 @@
                     <td>{{$kembali->id}}</td>
                     <td class="text-capitalize">{{$kembali->peminjaman->anggota->nama}}</td>
                     <td>{{$kembali->peminjaman->buku->judul_buku}}</td>
-                    <td>{{$kembali->peminjaman->tanggal_pinjam}}</td>
-                    <td>{{$kembali->tanggal_kembali}}</td>
+                    <td>{{date('d F Y', strtotime($kembali->peminjaman->tanggal_pinjam))}}</td>
+                    <td>{{date('d F Y', strtotime($kembali->tanggal_kembali))}}</td>
                     <td>{{$kembali->peminjaman->user->nama}}</td>
                     <td>@if($kembali->peminjaman->status==1)
                         <span class="badge bg-warning text-dark">Dipinjam</span>

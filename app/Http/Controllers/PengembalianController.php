@@ -22,7 +22,7 @@ class PengembalianController extends Controller
     public function index()
     {
         return view('pengembalian.index',[
-            'pengembalians'=> Pengembalian::all(),
+            'pengembalians'=> Pengembalian::all()->sortBy('tanggal_kembali')->values(),
             'peminjaman' => Peminjaman::all()
         ]);
     }

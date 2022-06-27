@@ -22,7 +22,7 @@ class PeminjamanController extends Controller
     public function index()
     {
         return view('peminjaman.index',[
-            'peminjaman'=> Peminjaman::all()
+            'peminjaman'=> Peminjaman::all()->sortBy('tanggal_pinjam')->values()
         ]);
     }
 
