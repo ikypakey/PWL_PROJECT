@@ -35,7 +35,7 @@
                          <select class="form-select" name="bukus_id">
                          @foreach ($data_bukus as $buku)
 
-                         <option value="{{ $buku->id }}" >
+                         <option value="{{ $buku->id }}" @if($buku->id==$peminjamans->bukus_id) selected @endif>
                          {{ $buku->judul_buku }} </option>
                          @endforeach
                          </select>
