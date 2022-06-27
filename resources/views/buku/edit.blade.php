@@ -26,16 +26,16 @@
                         <input type="text" name="judul_buku" class="form-control" id="nama" value="{{$data_bukus->judul_buku}}"
                             aria-describedby="judul_buku">
                     </div><br>
-                <div class="form-group">
-                         <label for="image">Id Kategori</label>
-                         <select class="form-select" name="kategoris_id">
+               <div class="form-group">
+                         <label for="image">Nama Kategori</label>
+                         <select class="form-select" name="data_kategori_id">
                          @foreach ($data_kategoris as $kategori)
-
-                         <option value="{{ $kategori->id }}" {{ $data_bukus->kategoris_id == $kategori->id ? 'selected' : '' }}>
-                         {{ $kategori->id }} </option>
+                        <option value="{{ $kategori->id }}" @if($kategori->id==$data_bukus->data_kategori_id) selected @endif>
+                         {{ $kategori->nama_kategori }} </option>
                          @endforeach
                          </select>
-                    </div><br>    
+                    </div><br>
+
                 <div class="form-group">
                         <label for="book_image">Gambar Buku</label>
                         <input type="file" name="book_image" class="form-control" id="book_image" value="{{$data_bukus->book_image}}"

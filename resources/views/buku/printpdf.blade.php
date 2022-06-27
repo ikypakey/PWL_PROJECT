@@ -20,7 +20,7 @@
  	 	 	<tr> 
  	 	 	 	<th>Id Buku</th> 
  	 	 	 	<th>Judul Buku</th> 
- 	 	 	 	<th>Id Kategori</th>
+ 	 	 	 	<th>Nama Kategori</th>
                 <th>Nama Pengarang</th>
                 <th>Penerbit</th>
                 <th>Tahun Terbit</th>
@@ -33,7 +33,7 @@
  	 	 	<tr> 
  	 	 	 	<td>{{$pdf->id }}</td> 
  	 	 	 	<td>{{$pdf->judul_buku}}</td> 
- 	 	 	 	<td>{{$pdf->kategoris_id}}</td> 
+ 	 	 	 	<td>{{$pdf->data_kategori->nama_kategori}}</td> 
  	 	 	 	<td>{{$pdf->nama_pengarang}}</td>
                 <td>{{$pdf->penerbit}}</td>
                 <td>{{$pdf->tahun_terbit}}</td> 

@@ -16,8 +16,7 @@ class CreateDataBukusTable extends Migration
         Schema::create('data_bukus', function (Blueprint $table) {
             $table->id();
             $table->string('judul_buku');
-            $table->unsignedBigInteger('kategoris_id')->nullable();
-            $table->foreign('kategoris_id')->references('id')->on('data_kategoris');
+            $table->foreignId('data_kategori_id');
             $table->string('book_image')->nullable();
             $table->string('nama_pengarang');
             $table->string('penerbit');

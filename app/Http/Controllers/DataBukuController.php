@@ -56,7 +56,7 @@ class DataBukuController extends Controller
     {
         $tes=$request->validate([
             'judul_buku' => 'required',
-            'kategoris_id' => 'required',
+            'data_kategori_id' => 'required',
             'book_image' => 'required',
             'nama_pengarang' => 'required',
             'penerbit' => 'required',
@@ -114,7 +114,7 @@ class DataBukuController extends Controller
     {
         $rules = [
             'judul_buku' => 'required',
-            'kategoris_id' => 'required',
+            'data_kategori_id' => 'required',
             'book_image' => 'required',
             'nama_pengarang' => 'required',
             'penerbit' => 'required',

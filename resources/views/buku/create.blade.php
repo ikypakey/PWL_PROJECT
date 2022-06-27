@@ -24,10 +24,10 @@
                         <input type="text" name="judul_buku" class="form-control" id="judul_buku" aria-describedby="judul_buku">
                     </div><br>
                     <div class="form-group">
-                        <label for="image">Id Kategori</label>
-                        <select class="form-select" name="kategoris_id">
+                        <label for="image">Nama Kategori</label>
+                        <select class="form-select" name="data_kategori_id">
                             @foreach ($data_kategoris as $kategori)
-                            <option value="{{ $kategori->id }}">{{ $kategori->id }}</option>
+                            <option value="{{ $kategori->id }}">{{ $kategori->nama_kategori }}</option>
                             @endforeach
                           </select>
                     </div><br>

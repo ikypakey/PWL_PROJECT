@@ -16,7 +16,7 @@ class DataBukuSeeder extends Seeder
          DB::table('data_bukus')->insert([
             [
                 'judul_buku'=>'Naruto Shipuden Vol 30',
-                'kategoris_id'=>'1',
+                'data_kategori_id'=>'1',
                 'book_image'=>'',
                 'nama_pengarang'=>' Mashashi Kishimoto',
                 'penerbit'=>'CV. Anugerah Rajarjo',
@@ -28,7 +28,7 @@ class DataBukuSeeder extends Seeder
             ],
            [
                  'judul_buku'=>'Naruto Shipuden Vol 1',
-                'kategoris_id'=>1,
+                'data_kategori_id'=>1,
                 'book_image'=>'',
                 'nama_pengarang'=>' Mashashi Kishimoto',
                 'penerbit'=>'CV. Anugerah Rajarjo',
@@ -40,7 +40,7 @@ class DataBukuSeeder extends Seeder
             ],
             [
                 'judul_buku'=>'Naruto Shipuden Vol 45',
-                'kategoris_id'=>1,
+                'data_kategori_id'=>1,
                 'book_image'=>'',
                 'nama_pengarang'=>' Mashashi Kishimoto',
                 'penerbit'=>'CV. Anugerah Rajarjo',
@@ -53,7 +53,7 @@ class DataBukuSeeder extends Seeder
             ],
             [
                 'judul_buku'=>'One Piece Vol 345',
-                'kategoris_id'=>1,
+                'data_kategori_id'=>1,
                 'book_image'=>'',
                 'nama_pengarang'=>' Eichiro Oda',
                 'penerbit'=>'Weeboo Jaya Sentosa',
@@ -66,7 +66,7 @@ class DataBukuSeeder extends Seeder
             ],
             [
                 'judul_buku'=>'One Piece Vol 115',
-                'kategoris_id'=>1,
+                'data_kategori_id'=>1,
                 'book_image'=>'',
                 'nama_pengarang'=>'  Eichiro Oda',
                 'penerbit'=>'Weeboo Jaya Sentosa',
@@ -79,7 +79,7 @@ class DataBukuSeeder extends Seeder
             ],
               [
                 'judul_buku'=>'One Piece Vol 215',
-                'kategoris_id'=>1,
+                'data_kategori_id'=>1,
                 'book_image'=>'',
                 'nama_pengarang'=>'  Eichiro Oda',
                 'penerbit'=>'CV. Weeboo Jaya Sentosa',

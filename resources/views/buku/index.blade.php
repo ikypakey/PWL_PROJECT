@@ -26,7 +26,7 @@
                   <tr>
                     <th>Id Buku</th>
                     <th>Judul Buku</th>
-                    <th>Id Kategori</th>
+                    <th>Nama Kategori</th>
                     <th>Gambar Buku</th>
                     <th>Nama Pengarang</th>
                     <th>Penerbit</th>
@@ -43,7 +43,7 @@
                   <tr>
                     <td>{{$buku -> id}}</td>
                     <td class="text-capitalize">{{$buku->judul_buku}}</td>
-                    <td>{{$buku->kategoris_id}}</td>
+                    <td>{{$buku->data_kategori->nama_kategori}}</td>
                     <td><img src="{{ asset('storage/'.$buku -> book_image) }}" alt="" height="90px" width="90px" class="rounded" style="object-fit: cover"></td>
                     <td>{{$buku->nama_pengarang}}</td>
                     <td>{{$buku->penerbit}}</td>

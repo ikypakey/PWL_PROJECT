@@ -23,7 +23,7 @@ class DataBuku extends Model
     }
     protected $fillable = [
        'judul_buku',
-        'kategoris_id',
+        'data_kategori_id',
         'book_image',
         'nama_pengarang' ,
         'penerbit',
