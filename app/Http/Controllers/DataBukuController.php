@@ -60,8 +60,8 @@ class DataBukuController extends Controller
             'book_image' => 'required',
             'nama_pengarang' => 'required',
             'penerbit' => 'required',
-            'tahun_terbit' => 'required',
-            'jumlah_halaman' => 'required',
+            'tahun_terbit' => 'required|integer',
+            'jumlah_halaman' => 'required|integer',
             'user_id' => 'required',
             ]);
             if ($request->file('book_image')) {
@@ -118,8 +118,8 @@ class DataBukuController extends Controller
             'book_image' => 'required',
             'nama_pengarang' => 'required',
             'penerbit' => 'required',
-            'tahun_terbit' => 'required',
-            'jumlah_halaman' => 'required',
+            'tahun_terbit' => 'required|integer',
+            'jumlah_halaman' => 'required|integer',
             'user_id' => 'required',
         ];
 

@@ -54,7 +54,7 @@ class DataAnggotaController extends Controller
             'nama' => 'required',
             'jeniskelamin' => 'required',
             'alamat' => 'required',
-            'notelp' => 'required',
+            'notelp' => 'required|max:13',
             'tanggallahir' => 'required',
             ]);
             if ($request->file('image')) {
@@ -107,7 +107,7 @@ class DataAnggotaController extends Controller
             'nama' => 'required',
             'jeniskelamin' => 'required',
             'alamat' => 'required',
-            'notelp' => 'required',
+            'notelp' => 'required|max:13',
             'tanggallahir' => 'required',
         ];
 

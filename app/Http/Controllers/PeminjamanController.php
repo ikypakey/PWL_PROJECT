@@ -54,7 +54,7 @@ class PeminjamanController extends Controller
             'anggotas_id' => 'required',
             'bukus_id' => 'required',
             'tanggal_pinjam' => 'required',
-            'lama_peminjaman' => 'required',
+            'lama_peminjaman' => 'required|integer',
             'user_id' => 'required',
             'status' => 'required',
             ]);
@@ -106,7 +106,7 @@ class PeminjamanController extends Controller
             'anggotas_id' => 'required',
             'bukus_id' => 'required',
             'tanggal_pinjam' => 'required',
-            'lama_peminjaman' => 'required',
+            'lama_peminjaman' => 'required|integer',
                         
         ];
 
